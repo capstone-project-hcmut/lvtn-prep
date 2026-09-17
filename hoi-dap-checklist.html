@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hỏi đáp Reeldemy</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Mục lục">
+    <strong>Mục lục</strong>
+    <a href="#questions">1. Câu hỏi cần chuẩn bị</a>
+    <a href="#checklist">2. Checklist trước buổi bảo vệ</a>
+    <a class="switch" href="ke-hoach-slide.html">← Kế hoạch slide</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">HK252-DAGD1-108 · Hội đồng bảo vệ luận văn</div>
+      <h1>Reeldemy: Hỏi đáp &amp; checklist</h1>
+      <p class="meta">GVHD: TS. Trương Tuấn Anh, ThS. Vũ Ngọc Tú · Nhóm: Nghiêm Phạm Vy Nghi, Đào Anh Phúc, Đoàn Viết Tiến Đạt</p>
+      <p class="meta">Giả định thời lượng <strong>20 phút thuyết trình</strong>, sau đó là phần hỏi đáp. Nếu thời lượng khác thì co giãn thời gian tương ứng. Mọi số liệu ở đây đều lấy từ báo cáo hoặc mã nguồn; hãy kiểm tra lại nếu có thay đổi trước buổi bảo vệ.</p>
+      <a class="page-switch" href="ke-hoach-slide.html">← Xem phần Kế hoạch slide</a>
+    </header>
+
+    <!-- 1 -->
+    <h2 id="questions">1. Câu hỏi cần chuẩn bị</h2>
+    <div class="controls">
+      <button type="button" data-toggle="open">Mở tất cả</button>
+      <button type="button" data-toggle="close">Thu gọn tất cả</button>
+    </div>
+
+    <h3>Rủi ro cao</h3>
+
+    <details class="q"><summary><span class="tag high">Cao</span><span class="qt">"AI chấm chính xác đến mức nào? Làm sao nhóm biết band chấm ra là đúng?"</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Báo cáo đã xây dựng quy trình kiểm định nhưng chưa có kết quả ("the corpus is still being assembled"). Đây lại là điểm mạnh chính của nền tảng.</dd>
+      <dt>Gợi ý trả lời</dt><dd>Band được ghi rõ là điểm ước lượng để luyện tập, không phải kết quả chính thức. Reading và Listening không dùng AI. Writing và Speaking được ràng buộc bởi rubric theo band descriptors, output JSON được kiểm tra schema, số từ do server tự đếm, và cơ chế thử lại. Độ chính xác được đo so với giám khảo thật, với chỉ tiêu đặt từ trước (MAE ≤ 1.0, QWK ≥ 0.60). Nghiên cứu trước đây (Koraishi 2024) cho thấy ChatGPT nhìn chung khớp cao với giám khảo người, dù có một số trường hợp lệch.</dd>
+      <dt>Bằng chứng</dt><dd>Chương 5 §Validation of AI Grading; bảng ai-controls và ai-targets</dd>
+      <dt>Việc cần chuẩn bị</dt><dd><strong>Chạy thử nghiệm trước buổi bảo vệ</strong>, ví dụ chấm một lần cho khoảng 40 bài Task 2 mẫu đã công bố của Cambridge: MAE, độ khớp trong 0.5 band, độ lệch. Một con số thật có giá trị hơn nhiều so với chỉ có quy trình.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">Cao</span><span class="qt">"Thuật toán gợi ý ở Chương 3 có thực sự là thứ đang chạy không?"</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Một số phần trong thiết kế chưa chạy thật: độ khó bài tập và retrievability trong công thức cập nhật, việc tăng dần α, số bài N, trọng số theo streak, và phương án dự phòng FR-6.2.</dd>
+      <dt>Gợi ý trả lời</dt><dd>Phần chấm điểm và xếp hạng đã chạy thật: thành phần decay theo FSRS cộng thành phần relevance, kế hoạch được lưu một lần mỗi ngày. Việc cập nhật năng lực là trung bình trượt đơn giản hóa (α = 0.7). Các phần còn thiếu đang chờ dữ liệu chưa được thu thập: độ khó của bài tập, thời gian học trung bình mỗi ngày, và streak được lưu lại. Chuyển tới slide dự phòng B19 (bảng thiết kế và bản đã triển khai).</dd>
+      <dt>Bằng chứng</dt><dd>Các ghi chú "Current implementation status" ở Chương 3; Chương 5 §Grading and Competency Update</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">Cao</span><span class="qt">"Công thức relevance trong báo cáo không khớp với code."</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Công thức trong báo cáo: RS = Σ w<sub>c</sub> · max(0, (Target<sub>c</sub> − Current<sub>c</sub>) / 9). Trong code: RS = 0.5 · (khoảng cách tới mục tiêu của kỹ năng ÷ khoảng cách lớn nhất) + 0.5 · Σ w · (1 − điểm competency). Mục tiêu được đặt theo kỹ năng chứ không theo competency, và các ghi chú trạng thái trong báo cáo không đề cập sự khác biệt này.</dd>
+      <dt>Gợi ý trả lời</dt><dd>Bản triển khai kết hợp khoảng cách mục tiêu ở cấp kỹ năng với mức độ yếu ở cấp competency, vì người học đặt mục tiêu theo từng kỹ năng khi bắt đầu.</dd>
+      <dt>Việc cần chuẩn bị</dt><dd>Sửa công thức relevance trong <code>RecommendationAlgorithm.tex</code> cho khớp với code, hoặc thêm ghi chú trạng thái giải thích sự khác biệt. Dùng phiên bản theo code ở slide 10.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">Cao</span><span class="qt">"Mỗi lần chấm AI tốn bao nhiêu tiền?"</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Nhóm quảng bá là "vòng lặp AI chi phí thấp" so với $9.99 mỗi lần của IOT, nhưng báo cáo không đưa ra chi phí cho mỗi lần chấm.</dd>
+      <dt>Việc cần chuẩn bị</dt><dd>Ước tính số token cho mỗi lần chấm Writing (prompt + bài viết + JSON trả về) × giá DeepSeek; chi phí theo phút của <code>gpt-4o-transcribe</code> cho mỗi Part Speaking; chi phí theo phút của <code>gpt-realtime</code> cho giám khảo trực tiếp. Đưa các con số vào slide dự phòng B18.</dd>
+    </dl></div></details>
+
+    <h3>Rủi ro trung bình</h3>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Cache trong kiến trúc được dùng ở đâu?"</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Sơ đồ kiến trúc có thành phần Cache, nhưng ở backend Redis chỉ được BullMQ sử dụng (và được health check ping tới). Không có cache ở tầng ứng dụng.</dd>
+      <dt>Gợi ý trả lời / chuẩn bị</dt><dd>Hoặc bỏ ô Cache khỏi sơ đồ trước buổi bảo vệ, hoặc trả lời rằng hiện Redis đang làm message broker cho hàng đợi và cache truy vấn nằm trong kế hoạch. Ở phía client, TanStack Query đã cache dữ liệu từ server.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Worker có thật sự là một service riêng không? Khi scale ra nhiều instance thì sao?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Hiện tại các consumer chạy chung process với API. Hàng đợi đã tách rời bên tạo job và bên xử lý job, nên có thể tách thành service riêng mà không cần sửa phía tạo job. Hạn chế đã biết: Redis bị cố định ở <code>localhost:6379</code>, nên mỗi VM chỉ có một hàng đợi. Cần đưa cấu hình này ra biến môi trường trước khi chạy nhiều instance hoặc chuyển sang Memorystore.</dd>
+      <dt>Bằng chứng</dt><dd>Chương 3 kiến trúc (mục Worker); Chương 5 §Known Limitations</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Tại sao chọn MongoDB? Và làm sao việc cập nhật năng lực là toàn vẹn, không ghi dở dang (NFR-3.5)?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>MongoDB phù hợp với các document bài tập đa hình có nhóm câu hỏi lồng nhau nhiều cấp, được lưu qua cơ chế kế thừa discriminator của MikroORM. Về tính toàn vẹn: code backend không dùng transaction tường minh. Câu trả lời khả năng cao là profile nằm trong một document duy nhất, và MongoDB ghi một document một cách nguyên tử.</dd>
+      <dt>Việc cần chuẩn bị</dt><dd>Xác nhận luồng ghi một document trong <code>competency-calculator.service.ts</code> và cách đã chạy bài test giả lập lỗi.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Không chấm Pronunciation thì band Speaking còn ý nghĩa không?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Đây là lựa chọn có chủ đích: khi chuyển giọng nói thành văn bản thì thông tin phát âm bị mất, nên hệ thống không chấm thứ không quan sát được thay vì đoán. Độ trôi chảy chỉ được đánh giá dựa trên những gì thể hiện trong transcript, và nhận xét trả về có nêu rõ hạn chế này. Band tổng là trung bình của ba tiêu chí còn lại. Hướng phát triển: dùng mô hình đánh giá phát âm trực tiếp từ audio.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Học viên có thể gian lận bằng prompt injection không?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Bài viết chỉ được gửi dưới dạng nội dung người dùng không tin cậy, kèm chỉ dẫn không bao giờ làm theo các yêu cầu nằm trong bài. Bài nộp giới hạn 10.000 ký tự và được kiểm tra độ dài tối thiểu, ngôn ngữ và nội dung lặp trước khi gọi mô hình. Ghi chú chấm bị loại khỏi đề bài gửi xuống người học. Quy trình kiểm định có khoảng 80 bài tấn công, với chỉ tiêu tỷ lệ thành công ≤ 10% cho mỗi loại.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Số liệu load test có sát thực tế không?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Máy chạy load test và VM nằm ở hai châu lục khác nhau, nên khoảng 220 ms độ trễ mạng cố định đã được trừ ra ở mỗi lần đo. Đối tượng test là VM develop dùng chung, không phải máy cấu hình production. Cả hai điều kiện đều được ghi lại cùng với script k6. Kết quả: trang chi tiết p95 ≈ 280 ms; 10 người dùng trong 10 phút vẫn nằm trong ngưỡng lỗi cho phép; stress test 100 người dùng trả về 200 cho mọi request.</dd>
+      <dt>Việc cần chuẩn bị</dt><dd>Chuẩn bị sẵn ảnh chụp kết quả k6.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Trung bình</span><span class="qt">"Nếu VM bị sập hoặc bản deploy mới bị lỗi thì sao? Có rollback không?"</span></summary><div class="body"><dl>
+      <dt>Vì sao rủi ro</dt><dd>Backend chạy trên một VM duy nhất cho mỗi môi trường, và image được gắn tag theo tên nhánh (<code>:production</code>, <code>:develop</code>) chứ không theo phiên bản, nên báo cáo không mô tả cách quay lại bản trước.</dd>
+      <dt>Gợi ý trả lời</dt><dd>Container chạy với <code>--restart unless-stopped</code> và có health check, nên tự khởi động lại khi process bị lỗi. Mọi thay đổi phải qua lint, test và build trước khi được deploy, và được thử trên môi trường develop trước khi lên production. Database nằm trên MongoDB Atlas, có sao lưu tự động và không phụ thuộc VM. Hạn chế đã biết: chưa có nhiều instance hay cân bằng tải, và Redis đang cố định ở <code>localhost</code>.</dd>
+      <dt>Việc cần chuẩn bị</dt><dd>Xác nhận cách nhóm sẽ rollback trong thực tế (ví dụ chạy lại workflow trên commit trước, hoặc gắn thêm tag theo commit SHA cho image).</dd>
+    </dl></div></details>
+
+    <h3>Rủi ro thấp</h3>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Tại sao chọn service-based mà không phải monolith hay microservices?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Kiến trúc này tách rõ logic chấm điểm, năng lực và bài tập mà không phải gánh chi phí của microservices (mỗi service một database, service discovery), điều mà nhóm 3 người không đáng để làm. Sau này các thành phần vẫn có thể scale riêng.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Nội dung bài tập lấy từ đâu? Có bao nhiêu bài? Còn vấn đề bản quyền?"</span></summary><div class="body"><dl>
+      <dt>Việc cần chuẩn bị</dt><dd>Nắm rõ số lượng bài tập mỗi kỹ năng trên production, nguồn của các bài đọc và audio, cách dùng seeder. Với bộ dữ liệu kiểm định AI, báo cáo trích dẫn bài mẫu Cambridge theo sách, đề và trang thay vì sao chép lại.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Những người tham gia kiểm thử khả năng sử dụng (NFR-6.1) là ai?"</span></summary><div class="body"><dl>
+      <dt>Việc cần chuẩn bị</dt><dd>Chuẩn bị sẵn số lượng người tham gia, đặc điểm của họ, cách tổ chức buổi kiểm thử và thời gian hoàn thành.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Trọng số competency của một bài tập được gán thế nào? Ai quyết định?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Admin gán các competency có trọng số khi tạo bài tập, và tổng trọng số phải bằng 1 (FR-3.1). Danh mục competency được seed sẵn chứ không tạo trên giao diện. Cần nắm số competency được seed cho mỗi kỹ năng và mối liên hệ của chúng với 44 dạng câu hỏi IELTS.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Làm sao bảo vệ OpenAI key khi dùng giám khảo trực tiếp?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Backend cấp một client token ngắn hạn; key thật nằm lại trên server. Chỉ dẫn cho giám khảo được gửi kèm trong request tạo token ở server, nên không thể sửa từ devtools của trình duyệt. Việc luân phiên lượt nói dùng voice-activity detection phía nhà cung cấp, ngưỡng im lặng 700 ms.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Tại sao dùng hai nhà cung cấp AI?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>DeepSeek rẻ khi chấm văn bản với số lượng lớn, nhưng không có endpoint audio hay realtime. OpenAI đảm nhận chuyển giọng nói thành văn bản và hội thoại giọng nói trực tiếp. Tách riêng giúp việc đổi nhà cung cấp chấm điểm không ảnh hưởng tới luồng Speaking. DeepSeek được gọi qua client tương thích OpenAI nên việc chuyển đổi nhà cung cấp rất dễ.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Thấp</span><span class="qt">"Reeldemy khác gì Prep.vn hay DOL?"</span></summary><div class="body"><dl>
+      <dt>Gợi ý trả lời</dt><dd>Kế hoạch hằng ngày dựa trên những gì người học đang quên và khoảng cách tới mục tiêu, không theo lộ trình cứng (Prep) hay để người học tự tìm bài (DOL). Đủ mọi dạng câu hỏi của cả bốn kỹ năng, không chỉ trắc nghiệm. Chấm Writing và Speaking bằng AI mà không tính phí mỗi lần (IOT thu $9.99).</dd>
+    </dl></div></details>
+
+    <!-- 2 -->
+    <h2 id="checklist">2. Checklist trước buổi bảo vệ</h2>
+    <p class="progress" id="progress"></p>
+    <div class="controls"><button type="button" id="reset">Đặt lại checklist</button></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Sửa báo cáo</h3>
+        <label class="check"><input type="checkbox" data-id="r1"><span>Viết lại abstract: hiện vẫn mô tả giai đoạn 1 ("…form the focus of the next phase")</span></label>
+        <label class="check"><input type="checkbox" data-id="r2"><span>Thay các nhãn "Specialized Project": <code>main.tex</code> dòng 157 và 223, <code>Introduction.tex</code> dòng 55</span></label>
+        <label class="check"><input type="checkbox" data-id="r3"><span>Sửa công thức relevance trong <code>RecommendationAlgorithm.tex</code> cho khớp với code</span></label>
+        <label class="check"><input type="checkbox" data-id="r4"><span>Ghi rõ số bài thực tế (3, do dashboard truyền vào) trong ghi chú trạng thái ở Chương 3 và Chương 5</span></label>
+        <label class="check"><input type="checkbox" data-id="r5"><span>Bỏ hoặc giải thích thành phần Cache trong sơ đồ kiến trúc</span></label>
+        <label class="check"><input type="checkbox" data-id="r6"><span>Sửa ảnh bị lặp trong hình Daily Tasks (<code>UserInterfaceDesigns.tex</code> dòng 67)</span></label>
+        <label class="check"><input type="checkbox" data-id="r7"><span>Xử lý các ghi chú <code>TODO(team)</code> trong <code>Testing.tex</code> (kích thước bộ dữ liệu, band trần, chỉ tiêu)</span></label>
+      </div>
+      <div class="card">
+        <h3>Chỉnh sửa slide</h3>
+        <label class="check"><input type="checkbox" data-id="d1"><span>Xóa các trang template Slidesgo còn sót và slide trống trước khi xuất PDF</span></label>
+        <label class="check"><input type="checkbox" data-id="d2"><span>Sửa nội dung bị copy nhầm (slide 8 và 12 của giai đoạn 1) và chữ đè lên nhau (slide 9)</span></label>
+        <label class="check"><input type="checkbox" data-id="d3"><span>Cập nhật các slide lỗi thời: NFR (13), dịch vụ bên ngoài (25, thêm OpenAI), hosting (33, GCP), tên kiến trúc (20)</span></label>
+        <label class="check"><input type="checkbox" data-id="d4"><span>Thêm chú thích hình có đánh số</span></label>
+        <label class="check"><input type="checkbox" data-id="d5"><span>Thêm danh mục slide dự phòng (B1–B19)</span></label>
+      </div>
+      <div class="card">
+        <h3>Bằng chứng cần chuẩn bị</h3>
+        <label class="check"><input type="checkbox" data-id="e1"><span>Thử nghiệm chấm AI (MAE, độ khớp trong 0.5 band, độ lệch trên các bài mẫu đã công bố)</span></label>
+        <label class="check"><input type="checkbox" data-id="e2"><span>Chi phí mỗi lần chấm cho Writing, Speaking và giám khảo trực tiếp</span></label>
+        <label class="check"><input type="checkbox" data-id="e3"><span>Một score breakdown thật cho ví dụ minh họa</span></label>
+        <label class="check"><input type="checkbox" data-id="e4"><span>Ảnh chụp màn hình: CI chạy xanh, báo cáo coverage, kết quả k6, hệ thống theo dõi lỗi, workflow deploy và trang develop/production</span></label>
+        <label class="check"><input type="checkbox" data-id="e5"><span>Số lượng bài tập mỗi kỹ năng trên production</span></label>
+      </div>
+      <div class="card">
+        <h3>Tập dượt</h3>
+        <label class="check"><input type="checkbox" data-id="p1"><span>Quay 3 video demo ngắn (1:00, 1:30, 2:00) và giữ thêm bản dự phòng</span></label>
+        <label class="check"><input type="checkbox" data-id="p2"><span>Kiểm tra video, âm thanh và máy chiếu theo điều kiện phòng bảo vệ</span></label>
+        <label class="check"><input type="checkbox" data-id="p3"><span>Phân công người phụ trách từng nhóm câu hỏi ở <a href="#questions">mục 1</a></span></label>
+        <label class="check"><input type="checkbox" data-id="p4"><span>Tập hai lượt đầy đủ có bấm giờ, kết thúc dưới 20:00</span></label>
+        <label class="check"><input type="checkbox" data-id="p5"><span>Hỏi đáp thử: một thành viên đóng vai hội đồng đặt các câu hỏi rủi ro cao</span></label>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.dataset.toggle === 'open';
+      document.querySelectorAll('details.q').forEach(function (d) { d.open = open; });
+    });
+  });
+
+  var KEY = 'reeldemy-council-checklist';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.check input'));
+
+  function render() {
+    var done = 0;
+    boxes.forEach(function (b) {
+      b.checked = !!state[b.dataset.id];
+      b.closest('.check').classList.toggle('done', b.checked);
+      if (b.checked) done++;
+    });
+    document.getElementById('progress').textContent = 'Đã xong ' + done + '/' + boxes.length;
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () { state[b.dataset.id] = b.checked; save(); render(); });
+  });
+  document.getElementById('reset').addEventListener('click', function () { state = {}; save(); render(); });
+  render();
+</script>
+</body>
+</html>

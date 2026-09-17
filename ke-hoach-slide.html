@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kế hoạch slide Reeldemy</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Mục lục">
+    <strong>Mục lục</strong>
+    <a href="#principle">1. Định hướng chung</a>
+    <a href="#timing">2. Phân bổ thời gian</a>
+    <a href="#slides">3. Kế hoạch từng slide</a>
+    <a href="#changes">4. Kế hoạch → thực tế</a>
+    <a href="#demo">5. Kịch bản demo</a>
+    <a href="#backup">6. Slide dự phòng</a>
+    <a class="switch" href="hoi-dap-checklist.html">Hỏi đáp &amp; checklist →</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">HK252-DAGD1-108 · Hội đồng bảo vệ luận văn</div>
+      <h1>Reeldemy: Kế hoạch slide</h1>
+      <p class="meta">GVHD: TS. Trương Tuấn Anh, ThS. Vũ Ngọc Tú · Nhóm: Nghiêm Phạm Vy Nghi, Đào Anh Phúc, Đoàn Viết Tiến Đạt</p>
+      <p class="meta">Giả định thời lượng <strong>20 phút thuyết trình</strong>, sau đó là phần hỏi đáp. Nếu thời lượng khác thì co giãn thời gian tương ứng. Mọi số liệu ở đây đều lấy từ báo cáo hoặc mã nguồn; hãy kiểm tra lại nếu có thay đổi trước buổi bảo vệ.</p>
+      <a class="page-switch" href="hoi-dap-checklist.html">Xem phần Hỏi đáp &amp; checklist →</a>
+    </header>
+
+    <!-- 1 -->
+    <h2 id="principle">1. Định hướng chung</h2>
+    <div class="callout">
+      <strong>Giai đoạn 1 trình bày những gì nhóm dự định làm. Buổi bảo vệ cuối cần cho hội đồng thấy những gì nhóm đã làm được và bằng chứng là nó hoạt động.</strong>
+      Hội đồng đã nghe phần bài toán và thiết kế rồi. Hãy nói ngắn gọn các phần đó, dành thời gian cho ba phần đi sâu (mỗi phần kèm một video demo ngắn) và phần bằng chứng.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Từ slide giai đoạn 1 của nhóm</h3>
+        <p><strong>Nên giữ</strong></p>
+        <ul>
+          <li>Mạch kể về bài toán rõ ràng: nhu cầu cao, rào cản chi phí, ba khoảng trống</li>
+          <li>Phần chính gọn, các sơ đồ chuyển xuống phụ lục</li>
+          <li>Slide phân chia section có đánh số</li>
+        </ul>
+        <p><strong>Nên tránh</strong></p>
+        <ul>
+          <li>Các trang template Slidesgo còn sót (trang 88–128 trong PDF) và slide 35 còn để trống</li>
+          <li>Nội dung bị copy nhầm sang slide khác (slide 8 và 12), chữ đè lên nhau (slide 9)</li>
+          <li>Slide sơ đồ chỉ có tiêu đề, không có giải thích</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Từ slide của nhóm khóa trước (Chung Ta Cùng Tiến)</h3>
+        <p><strong>Nên học theo</strong></p>
+        <ul>
+          <li>Video demo quay sẵn cho từng luồng chức năng</li>
+          <li>Slide bằng chứng: dashboard giám sát, bộ dữ liệu kiểm thử kèm tỷ lệ chính xác</li>
+          <li>Giới thiệu phạm vi phụ trách của từng người ngay từ đầu; hình có đánh số và chú thích</li>
+          <li>Phụ lục gồm so sánh các hệ thống liên quan, cơ sở dữ liệu, sơ đồ triển khai</li>
+        </ul>
+        <p><strong>Nên tránh</strong></p>
+        <ul>
+          <li>Phần nêu bài toán và động lực quá mỏng</li>
+          <li>Cũng để sót các trang template trong file PDF</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <h2 id="timing">2. Phân bổ thời gian</h2>
+    <div class="timebar" role="img" aria-label="Phân bổ thời gian cho từng phần trong 20 phút">
+      <div style="flex:1;background:var(--s1)">1:00</div>
+      <div style="flex:1.5;background:var(--s2)">1:30</div>
+      <div style="flex:1.5;background:var(--s3)">1:30</div>
+      <div style="flex:1;background:var(--s4)">1:00</div>
+      <div style="flex:1.5;background:var(--s6)">1:30</div>
+      <div style="flex:2.5;background:var(--s7)">2:30</div>
+      <div style="flex:2.5;background:var(--s12)">2:30</div>
+      <div style="flex:4.5;background:var(--s8)">AI 4:30</div>
+      <div style="flex:1.5;background:var(--s9)">1:30</div>
+      <div style="flex:1;background:var(--s11)">1:00</div>
+      <div style="flex:1.5;background:var(--s10)">1:30</div>
+    </div>
+    <div class="legend">
+      <span style="--c:var(--s1)">Mở đầu</span><span style="--c:var(--s2)">Bài toán</span><span style="--c:var(--s3)">Mục tiêu</span>
+      <span style="--c:var(--s4)">Vòng lặp học tập</span><span style="--c:var(--s6)">Kiến trúc</span><span style="--c:var(--s7)">Cơ chế thích ứng</span>
+      <span style="--c:var(--s12)">Dạng bài tập</span><span style="--c:var(--s8)">Chấm điểm AI</span><span style="--c:var(--s9)">Kiểm thử</span>
+      <span style="--c:var(--s11)">Triển khai</span><span style="--c:var(--s10)">Kết thúc</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Phần</th><th>Slide</th><th class="num">Thời lượng</th><th class="num">Kết thúc lúc</th><th>Người trình bày</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Mở đầu</td><td>1–3</td><td class="num">1:00</td><td class="num">1:00</td><td>A</td></tr>
+          <tr><td>2</td><td>Nhắc lại bài toán</td><td>4–5</td><td class="num">1:30</td><td class="num">2:30</td><td>A</td></tr>
+          <tr><td>3</td><td>Mục tiêu &amp; những thay đổi</td><td>6–7</td><td class="num">1:30</td><td class="num">4:00</td><td>A</td></tr>
+          <tr><td>4</td><td>Vòng lặp học tập</td><td>8</td><td class="num">1:00</td><td class="num">5:00</td><td>A</td></tr>
+          <tr><td>5</td><td>Kiến trúc hệ thống</td><td>9</td><td class="num">1:30</td><td class="num">6:30</td><td>C</td></tr>
+          <tr><td>6</td><td>Đi sâu 1: cơ chế thích ứng (kèm video 1:00)</td><td>10–11</td><td class="num">2:30</td><td class="num">9:00</td><td>C</td></tr>
+          <tr><td>7</td><td>Đi sâu 2: đủ các dạng bài tập (kèm video 1:30)</td><td>12–13</td><td class="num">2:30</td><td class="num">11:30</td><td>B</td></tr>
+          <tr><td>8</td><td>Đi sâu 3: chấm điểm bằng AI (kèm video 2:00)</td><td>14–17</td><td class="num">4:30</td><td class="num">16:00</td><td>B / C</td></tr>
+          <tr><td>9</td><td>Bằng chứng chất lượng</td><td>18–19</td><td class="num">1:30</td><td class="num">17:30</td><td>B</td></tr>
+          <tr><td>10</td><td>Triển khai (deployment)</td><td>20</td><td class="num">1:00</td><td class="num">18:30</td><td>B</td></tr>
+          <tr><td>11</td><td>Hạn chế, hướng phát triển, kết luận</td><td>21–23</td><td class="num">1:30</td><td class="num">20:00</td><td>A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">Tổng cộng đúng 20:00, không còn thời gian dư: khi tập hãy cố kết thúc sớm hơn khoảng 30 giây. A/B/C chỉ là tạm đặt. Hãy giao phần nào cho người đã trực tiếp làm phần đó, vì hội đồng thường hỏi người đã trình bày.</p>
+
+    <!-- 3 -->
+    <h2 id="slides">3. Kế hoạch từng slide</h2>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s1)"></span><h3>Mở đầu</h3><span class="time">1:00 · slide 1–3</span></div>
+      <div class="slide"><div class="n">1</div><div><h4>Trang tiêu đề</h4><ul><li>Reeldemy: nền tảng học tập đa phương tiện có tính thích ứng cho IELTS</li><li>Hội đồng, GVHD, ngày giờ, mã nhóm</li></ul></div></div>
+      <div class="slide"><div class="n">2</div><div><h4>Thành viên &amp; phân công</h4><ul><li>Ba thành viên, mỗi người kèm mảng mình phụ trách (frontend, backend, AI, hạ tầng)</li></ul><div class="tip">Slide "Scope of Work" của nhóm khóa trước làm rất tốt: hội đồng biết nên hỏi ai về phần nào.</div></div></div>
+      <div class="slide"><div class="n">3</div><div><h4>Nội dung trình bày</h4><ul><li>Bài toán → Mục tiêu → Vòng lặp học tập → Kiến trúc → Cơ chế thích ứng → Các dạng bài tập → Chấm điểm AI → Kiểm thử → Triển khai → Kết luận</li></ul></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s2)"></span><h3>Nhắc lại bài toán</h3><span class="time">1:30 · slide 4–5</span></div>
+      <div class="slide"><div class="n">4</div><div><h4>Nhu cầu cao, chi phí cao</h4><ul>
+        <li>IELTS ≥ 4.0 được miễn thi và tính 10 điểm môn ngoại ngữ tốt nghiệp THPT; hơn 100 trường đại học dùng IELTS trong xét tuyển; học sinh THPT hiện chiếm 30% số thí sinh</li>
+        <li><strong>Thí sinh Việt Nam yếu nhất ở Writing (6.0) và Speaking (5.7)</strong>. Đây là lý do chấm điểm hai kỹ năng này bằng AI là trọng tâm của Reeldemy.</li>
+        <li>Trung tâm ngoại ngữ thu 60–100 triệu đồng để nâng từ 5.5 lên 7.5, khiến người học chuyển sang tự học online mà không có định hướng</li>
+      </ul><div class="src">Nguồn: Chương 1 §Context</div></div></div>
+      <div class="slide"><div class="n">5</div><div><h4>Các nền tảng hiện có so với Reeldemy</h4><ul>
+        <li>Một bảng so sánh: Prep.vn, DOL English, IELTS Online Tests, Reeldemy</li>
+        <li>Các tiêu chí: gợi ý bài học tiếp theo theo năng lực · bao phủ đủ các dạng câu hỏi · chấm Writing và Speaking bằng AI · chi phí mỗi lần chấm AI (IOT thu $9.99)</li>
+      </ul><div class="src">Nguồn: Chương 1 §Existing System, §Problem Statement. Thay cho slide 5–9 của giai đoạn 1.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s3)"></span><h3>Mục tiêu &amp; những thay đổi</h3><span class="time">1:30 · slide 6–7</span></div>
+      <div class="slide"><div class="n">6</div><div><h4>Mục tiêu &amp; phạm vi</h4><ul>
+        <li>Sáu mục tiêu: hiểu năng lực từng người học · biến hiểu biết đó thành định hướng · luyện tập sát đề thật cho cả bốn kỹ năng · tự học được Writing và Speaking mà không cần giáo viên · xây dựng thói quen tự học · kho bài tập ngày càng mở rộng</li>
+        <li>Phạm vi: chỉ IELTS Academic, chỉ nền tảng web, hoàn toàn tự động (không có giáo viên thật)</li>
+      </ul><div class="tip">Đánh số các mục tiêu. Slide 22 sẽ đối chiếu lại theo các số này.</div></div></div>
+      <div class="slide"><div class="n">7</div><div><h4>Từ giai đoạn 1: kế hoạch → thực tế</h4><ul>
+        <li>Một timeline ngang gồm 4–5 mốc chính, giống slide "Development Timeline" của nhóm khóa trước:
+          <div class="table-wrap"><table>
+            <thead><tr><th>Mốc</th><th>Nội dung</th></tr></thead>
+            <tbody>
+              <tr><td>04/06/2026</td><td>Bảo vệ giai đoạn 1: phân tích, thiết kế, kế hoạch</td></tr>
+              <tr><td>06/2026</td><td>Xây dựng lõi: xác thực, competency, bài tập, phiên làm bài, gợi ý bài hằng ngày</td></tr>
+              <tr><td>07/2026</td><td>Hoàn thiện 4 kỹ năng, chấm Writing bằng AI, triển khai CI/CD</td></tr>
+              <tr><td>08/2026</td><td>Speaking và giám khảo AI trực tiếp, kiểm thử và đo các yêu cầu phi chức năng</td></tr>
+              <tr><td>09/2026</td><td>Bảo vệ cuối</td></tr>
+            </tbody>
+          </table></div>
+        </li>
+        <li>Bên dưới timeline: bảng ngắn các quyết định và chỉ tiêu đã điều chỉnh, kèm lý do (xem <a href="#changes">mục 4</a>)</li>
+      </ul><div class="tip">Mốc 04/06/2026 lấy từ slide giai đoạn 1; các tháng còn lại là ước lượng dựa trên Gantt cũ, nhóm cần sửa lại theo thực tế. Nếu slide bị chật, tách bảng thay đổi sang slide riêng hoặc đưa xuống slide dự phòng. Có thể có thành viên hội đồng còn nhớ các chỉ tiêu hồi tháng 6, nên nhóm vẫn cần tự nêu các thay đổi để không bị hiểu là "dời chỉ tiêu".</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s4)"></span><h3>Vòng lặp học tập</h3><span class="time">1:00 · slide 8</span></div>
+      <div class="slide"><div class="n">8</div><div><h4>Reeldemy dẫn dắt người học như thế nào</h4><ul>
+        <li>Một sơ đồ vòng tròn: <em>Bắt đầu (band mục tiêu + điểm hiện tại hoặc bài kiểm tra đầu vào) → Kế hoạch hằng ngày → Làm bài → Chấm điểm → Cập nhật năng lực → quay lại Kế hoạch hằng ngày</em></li>
+        <li>Chuỗi ngày học (streak) và tiến độ so với mục tiêu giúp người học duy trì động lực</li>
+      </ul><div class="tip">Đặt một bản thu nhỏ của vòng lặp này ở góc các slide sau để cho biết phần đang trình bày nằm ở đâu. Video demo đầu tiên chỉ xuất hiện ở khoảng phút thứ 8, nên hãy đặt ảnh chụp màn hình thật (dashboard, màn hình làm bài, kết quả chấm) cạnh từng bước của vòng lặp để hội đồng thấy sản phẩm sớm hơn.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s6)"></span><h3>Kiến trúc hệ thống</h3><span class="time">1:30 · slide 9</span></div>
+      <div class="slide"><div class="n">9</div><div><h4>Kiến trúc hệ thống (service-based)</h4><ul>
+        <li>Sơ đồ kiến trúc trong báo cáo: React client, NestJS backend, BullMQ/Redis, MongoDB Atlas, R2 + CDN, Google OAuth, DeepSeek, OpenAI</li>
+        <li>Một câu giải thích lý do: tách module rõ ràng như microservices, nhưng dùng chung một database và chi phí vận hành thấp, phù hợp nhóm 3 người</li>
+      </ul><div class="src">Nguồn: Chương 3 §Architecture Designs. Thống nhất dùng tên "service-based" ở mọi nơi; slide 20 giai đoạn 1 ghi "Client-Server".</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s7)"></span><h3>Đi sâu 1: cơ chế thích ứng</h3><span class="time">2:30 · slide 10–11</span></div>
+      <div class="slide"><div class="n">10</div><div><h4>Kế hoạch hằng ngày được chọn như thế nào</h4>
+        <div class="formula">PS = W<sub>decay</sub> · DecayFactor + W<sub>rel</sub> · RelevanceScore</div>
+        <ul>
+          <li><strong>DecayFactor:</strong> Σ trọng số × (1 − retrievability theo FSRS) trên các competency của bài tập. Kỹ năng nào người học đang quên sẽ được xếp hạng cao hơn.</li>
+          <li><strong>Relevance (theo code):</strong> 0.5 × (khoảng cách tới mục tiêu của kỹ năng này ÷ khoảng cách lớn nhất trong các kỹ năng) + 0.5 × Σ trọng số × (1 − điểm competency)</li>
+          <li>W<sub>decay</sub> = 0.5 khi streak ≤ 3, và 0.2 khi streak &gt; 3</li>
+        </ul>
+        <p><strong>Ví dụ minh họa</strong> (số liệu giả định; hãy thay bằng score breakdown thật lấy từ API):</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Bài tập ứng viên</th><th class="num">Decay</th><th class="num">RS<sub>skill</sub></th><th class="num">RS<sub>comp</sub></th><th class="num">RS</th><th class="num">PS (streak ≤ 3)</th><th class="num">PS (streak &gt; 3)</th></tr></thead>
+          <tbody>
+            <tr><td>A: Writing Task 2 (điểm 0.55, R = 0.90)</td><td class="num">0.10</td><td class="num">1.00</td><td class="num">0.45</td><td class="num">0.725</td><td class="num">0.413</td><td class="num"><strong>0.600</strong></td></tr>
+            <tr><td>B: Reading (điểm 0.70, R = 0.40)</td><td class="num">0.60</td><td class="num">0.25</td><td class="num">0.30</td><td class="num">0.275</td><td class="num"><strong>0.438</strong></td><td class="num">0.340</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tip">Cách nói: "Người mới bắt đầu sẽ được đưa quay lại phần Reading đang bị quên. Khi đã hình thành thói quen học, kế hoạch chuyển dần sang kỹ năng còn cách xa mục tiêu, tức là Writing." Ví dụ này chứng minh bằng con số rằng hệ thống vừa hướng tới mục tiêu vừa không bỏ quên kỹ năng nào.</div>
+        <div class="src">Code: <code>reeldemy-be/src/modules/exercise/recommendation.service.ts</code>, hằng số trong <code>src/common/constants/competencies.constants.ts</code>. Response của API có sẵn các trường breakdown (<code>ps</code>, <code>decayFactor</code>, <code>rs</code>, <code>rsSkill</code>, <code>rsComp</code>).</div>
+      </div></div>
+      <div class="slide"><div class="n">11</div><div><h4>Video demo 1: từ lúc bắt đầu tới kế hoạch hằng ngày</h4><ul>
+        <li>Video khoảng 1:00, thuyết minh trực tiếp. Kịch bản ở <a href="#demo">mục 5</a>.</li>
+        <li>Người dùng mới chọn band mục tiêu và đăng nhập → dashboard hiện kế hoạch hằng ngày, streak và tiến độ</li>
+      </ul><div class="tip">Nối với slide 10: "3 bài trong kế hoạch này chính là 3 bài có điểm PS cao nhất theo công thức vừa rồi." Nếu được, hiện kèm score breakdown thật của các bài đó.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s12)"></span><h3>Đi sâu 2: đủ các dạng bài tập</h3><span class="time">2:30 · slide 12–13</span></div>
+      <div class="slide"><div class="n">12</div><div><h4>Luyện tập sát đề thi thật cho cả bốn kỹ năng</h4><ul>
+        <li><strong>Reading:</strong> bài đọc chia đôi màn hình, 14 dạng nhóm câu hỏi (matching, True/False/Not Given, sentence completion, diagram labeling…)</li>
+        <li><strong>Listening:</strong> audio theo từng part, cùng các dạng câu hỏi như Reading, có ghi chú và chỉnh âm lượng</li>
+        <li><strong>Writing:</strong> Task 1 kèm biểu đồ và Task 2, đếm số từ trực tiếp, giới hạn 10.000 ký tự</li>
+        <li><strong>Speaking:</strong> 3 part (giới thiệu, long turn với cue card, thảo luận), ghi âm theo các bước: cấp quyền micro → chuẩn bị → nói → nghe lại</li>
+        <li><strong>Cách làm:</strong> một component <code>QuestionGroup</code> chuyển mỗi nhóm câu hỏi tới một trong vài bộ hiển thị dùng chung, nên 28 dạng câu hỏi Reading và Listening không cần 28 màn hình riêng</li>
+        <li><strong>Dùng chung cho mọi kỹ năng:</strong> cảnh báo lúc còn 5 phút và 1 phút, tự nộp khi hết giờ, tự lưu (trên trình duyệt và lên server mỗi 10 giây), làm tiếp phiên còn dở</li>
+      </ul><div class="tip">Trình bày dạng lưới 4 ô, mỗi kỹ năng một ảnh chụp màn hình. Phần "cách làm" chỉ cần nói, không cần viết hết lên slide.</div><div class="src">Nguồn: Chương 1 §Problem Statement (14 / 14 / 13 / 3 dạng); Chương 5 §Frontend Implementation</div></div></div>
+      <div class="slide"><div class="n">13</div><div><h4>Video demo 2: các dạng bài tập</h4><ul>
+        <li>Video khoảng 1:30: làm Reading với 2–3 dạng câu hỏi, nghe thử Listening, tải lại trang để thấy bài làm được khôi phục, admin tạo bài Listening có upload audio</li>
+      </ul><div class="tip">Tua nhanh các thao tác lặp lại. Mục tiêu là cho thấy độ đa dạng, không cần làm trọn một bài.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s8)"></span><h3>Đi sâu 3: chấm điểm bằng AI</h3><span class="time">4:30 · slide 14–17</span></div>
+      <div class="slide"><div class="n">14</div><div><h4>Quy trình chấm Writing</h4><ul>
+        <li>Nộp bài → phiên chuyển sang <code>GRADING</code> → job BullMQ → DeepSeek → JSON được kiểm tra theo schema → lưu lại → màn hình kết quả hỏi lại mỗi 2 giây</li>
+        <li>Các lớp prompt: system prompt đã gia cố, rubric (4 tiêu chí chấm theo band descriptors), đề bài, <strong>số từ do server tự đếm</strong> so với mức tối thiểu (150/250), và ghi chú chấm của admin</li>
+        <li>Kết quả không hợp lệ được thử lại tối đa 3 lần có backoff; nếu vẫn lỗi, phiên được đánh dấu thất bại và báo lỗi</li>
+      </ul><div class="src">Nguồn: Chương 5 §Grading and Competency Update</div></div></div>
+      <div class="slide"><div class="n">15</div><div><h4>Quy trình Speaking &amp; giám khảo AI trực tiếp</h4><ul>
+        <li>MediaRecorder → upload lên R2 qua presigned URL → <code>gpt-4o-transcribe</code> → DeepSeek chấm, mỗi Part một điểm</li>
+        <li>Cố ý không chấm Pronunciation: bản transcript không thể hiện được phát âm</li>
+        <li>Giám khảo trực tiếp cho Part 1 và Part 3: WebRTC, token ngắn hạn, chỉ dẫn cho giám khảo được đặt ở server</li>
+        <li><strong>Bài được chấm dựa trên file ghi âm</strong>. Nếu kết nối trực tiếp bị rớt, người học chỉ mất phần hội thoại chứ không mất bài làm được chấm.</li>
+      </ul><div class="tip">Cho xem thông báo dự phòng ở frontend ("We'll record your answers instead").</div></div></div>
+      <div class="slide"><div class="n">16</div><div><h4>Có thể tin vào kết quả chấm của AI không?</h4><ul>
+        <li>Năm lỗi có thể xảy ra và cách kiểm soát: output sai định dạng → kiểm tra schema và thử lại · đếm sai độ dài → số từ tính bằng code · prompt injection → bài viết được coi là nội dung không tin cậy, kèm kiểm tra độ dài và ngôn ngữ · người học thấy ghi chú chấm → ghi chú bị loại khỏi dữ liệu gửi xuống · tin quá mức vào band → hiển thị là "điểm ước lượng để luyện tập"</li>
+        <li>Quy trình kiểm định với chỉ tiêu cố định từ trước: MAE ≤ 1.0 band · độ khớp chênh lệch trong 0.5 band ≥ 60% · QWK ≥ 0.60 · ≥ 80% bài có kết quả chênh không quá 0.5 band qua 5 lần chấm · tỷ lệ tấn công thành công ≤ 10%</li>
+        <li><strong>Nếu nhóm đã chạy thử nghiệm, đưa số liệu vào đây.</strong></li>
+      </ul><div class="src">Nguồn: Chương 5 §Validation of AI Grading</div></div></div>
+      <div class="slide"><div class="n">17</div><div><h4>Video demo 3: chấm Writing và Speaking</h4><ul>
+        <li>Video khoảng 2:00: nộp bài Writing → trạng thái "đang chấm" → band và nhận xét từng tiêu chí</li>
+        <li>Speaking Part 1 với giám khảo AI trực tiếp, ghi âm vẫn chạy song song</li>
+        <li>Màn hình xem lại bài → dashboard với điểm competency đã thay đổi, khép lại vòng lặp ở slide 8</li>
+      </ul><div class="tip">Ba slide quy trình trước video chỉ có 2:30, nên nói ngắn và để video minh họa. Cắt bớt thời gian chờ chấm trong video. Không demo Speaking trực tiếp trong phòng bảo vệ vì phụ thuộc micro, tiếng ồn và mạng.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s9)"></span><h3>Bằng chứng chất lượng</h3><span class="time">1:30 · slide 18–19</span></div>
+      <div class="slide"><div class="n">18</div><div><h4>Kiểm thử ở năm tầng</h4><ul>
+        <li>Con số nổi bật: <strong>867 test case · 128 file</strong></li>
+        <li>Backend: 294 unit / 46 integration / 56 end-to-end. Frontend: 448 unit và component / 23 case Playwright × 3 trình duyệt.</li>
+        <li>Coverage: backend 98.5% statements, frontend 94.3% statements, cả hai được CI bắt buộc (ngưỡng tối thiểu 80% / 85%)</li>
+      </ul><div class="tip">Dùng ảnh chụp màn hình (CI chạy xanh, báo cáo coverage) thay vì bảng.</div></div></div>
+      <div class="slide"><div class="n">19</div><div><h4>Kết quả phi chức năng</h4><ul>
+        <li>p95 ≈ 280 ms ở trang chi tiết · stress test 100 người dùng, mọi request đều trả về 200 · thử lại 3 lần có backoff · tự động lưu mỗi 10 giây · mọi kiểm tra phi chức năng đều đạt</li>
+      </ul><div class="src">Nguồn: Chương 5 §Non-Functional Testing</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s11)"></span><h3>Triển khai (deployment)</h3><span class="time">1:00 · slide 20</span></div>
+      <div class="slide"><div class="n">20</div><div><h4>Hệ thống được triển khai và vận hành như thế nào</h4><ul>
+        <li><strong>Sơ đồ hạ tầng:</strong> frontend trên Cloudflare Pages · backend là Docker container trên Google Compute Engine · MongoDB Atlas · Redis chạy cùng VM · Cloudflare R2 + CDN</li>
+        <li><strong>Pipeline CI/CD</strong> (GitHub Actions): lint &amp; type-check → unit + integration test → build &amp; push image lên GitHub Container Registry → deploy qua SSH. End-to-end test (Playwright) chạy trên bản preview của từng PR.</li>
+        <li><strong>4 môi trường:</strong> local · preview theo từng PR · develop (nhánh <code>develop</code>) · production (nhánh <code>main</code>). Develop và production không dùng chung database, bucket hay VM; secret tách riêng qua GitHub Environments.</li>
+        <li><strong>Vận hành an toàn:</strong> Docker image nhiều tầng (<code>node:20-alpine</code>, chạy bằng user không phải root) · biến môi trường được kiểm tra bằng Joi khi khởi động · endpoint <code>GET /health</code> kiểm tra cả MongoDB và Redis, dùng cho health check và giám sát uptime</li>
+      </ul><div class="tip">Học theo nhóm khóa trước: đặt ảnh chụp trang develop và production kèm URL thật, cùng một lượt chạy GitHub Actions màu xanh. Ảnh chụp thuyết phục hơn bullet. Nếu slide quá dày, chỉ giữ sơ đồ hạ tầng và pipeline, phần còn lại để ở slide dự phòng B13.</div><div class="src">Nguồn: Chương 4 §Hosting and Infrastructure; Chương 5 §Deployment</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s10)"></span><h3>Kết thúc</h3><span class="time">1:30 · slide 21–23</span></div>
+      <div class="slide"><div class="n">21</div><div><h4>Hạn chế &amp; hướng phát triển</h4><ul>
+        <li>Hạn chế: chưa chạy kiểm định chấm AI · luật thích ứng còn đơn giản hóa · chưa chấm Pronunciation · Redis cố định ở <code>localhost</code> và chỉ một VM</li>
+        <li>Hướng phát triển: chạy kiểm định · huấn luyện xuyên suốt nhiều phiên học · bài tập điều chỉnh độ khó · ứng dụng di động đi kèm</li>
+      </ul></div></div>
+      <div class="slide"><div class="n">22</div><div><h4>Kết luận: mục tiêu → kết quả</h4><ul>
+        <li>Sáu mục tiêu đã đánh số, mỗi mục kèm dấu ✓ và một bằng chứng đã trình bày</li>
+      </ul></div></div>
+      <div class="slide"><div class="n">23</div><div><h4>Cảm ơn · Hỏi đáp</h4><ul><li>URL production và mã QR. Các slide dự phòng nằm sau slide này.</li></ul></div></div>
+    </div>
+
+    <!-- 4 -->
+    <h2 id="changes">4. Kế hoạch (giai đoạn 1) → thực tế</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Hạng mục</th><th>Slide giai đoạn 1</th><th>Báo cáo cuối</th><th>Lý do nên nêu</th></tr></thead>
+        <tbody>
+          <tr><td>Hosting backend</td><td>DigitalOcean</td><td>Google Compute Engine (vẫn giữ MongoDB Atlas)</td><td>Chung hệ thống thanh toán với dịch vụ xác thực; Atlas không phụ thuộc nhà cung cấp nên chuyển đổi không cần migrate dữ liệu</td></tr>
+          <tr><td>Nhà cung cấp AI</td><td>DeepSeek</td><td>DeepSeek + OpenAI</td><td>DeepSeek không có speech-to-text hay realtime voice; tách hai nhà cung cấp để đổi bên này không ảnh hưởng bên kia</td></tr>
+          <tr><td>Đăng nhập</td><td>Chỉ Google</td><td>Google + email/mật khẩu (bcrypt)</td><td>Cả hai cùng cấp một phiên JWT</td></tr>
+          <tr><td>Chỉ tiêu coverage</td><td>≥ 70% line</td><td>80% backend / 85% frontend; đạt 98.5% / 94.3%</td><td>Nâng chỉ tiêu khi bộ test đã hoàn thiện</td></tr>
+          <tr><td>Chỉ tiêu tải</td><td>50 phiên đồng thời, p95 ≤ 500 ms</td><td>10 người dùng trong 10 phút, cộng stress test tới 100 người dùng</td><td>Phù hợp với hạ tầng kiểm thử hiện có (VM develop dùng chung)</td></tr>
+          <tr><td>Chỉ tiêu tải media</td><td>≤ 200 ms với 50 người dùng</td><td>Bỏ</td><td>Muốn đo cần công cụ giám sát nằm ngoài phạm vi đề tài</td></tr>
+          <tr><td>Xóa mềm</td><td>Khôi phục được trong 30 ngày</td><td>Giữ vô thời hạn (không có job dọn dẹp)</td><td>Phục vụ yêu cầu kiểm tra, truy vết</td></tr>
+          <tr><td>Speaking</td><td>Dự kiến</td><td>Đã hoàn thành: chuyển giọng nói thành văn bản, chấm điểm, giám khảo trực tiếp</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5 -->
+    <h2 id="demo">5. Kịch bản 3 video demo (tổng 4:30)</h2>
+    <p>Mỗi video đặt ở cuối phần đi sâu tương ứng. Dùng cùng một tài khoản học viên cho cả 3 video để câu chuyện liền mạch, và quay trên dữ liệu production để dashboard không bị trống.</p>
+    <h3>Video 1: cơ chế thích ứng (slide 11 · 1:00)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Bước</th><th>Điểm cần nhấn mạnh</th><th class="num">Thời gian</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Người dùng mới: chọn band mục tiêu, chọn "mới học IELTS", đăng nhập Google</td><td>Thông tin nhập trước khi đăng nhập vẫn được giữ lại sau khi đăng nhập</td><td class="num">0:30</td></tr>
+          <tr><td>2</td><td>Dashboard: kế hoạch hằng ngày, streak, thanh tiến độ</td><td>Kế hoạch do công thức ở slide 10 tạo ra, không phải danh sách cố định</td><td class="num">0:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Video 2: các dạng bài tập (slide 13 · 1:30)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Bước</th><th>Điểm cần nhấn mạnh</th><th class="num">Thời gian</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Làm bài Reading: 2–3 dạng câu hỏi</td><td>Giao diện chia đôi màn hình giống thi thật; một bộ hiển thị dùng chung cho nhiều dạng</td><td class="num">0:35</td></tr>
+          <tr><td>2</td><td>Làm bài Listening: phát audio, ghi chú</td><td>Cùng dạng câu hỏi với Reading, có công cụ riêng cho Listening</td><td class="num">0:15</td></tr>
+          <tr><td>3</td><td><strong>Tải lại trang</strong> giữa lúc làm bài</td><td>Câu trả lời và thời gian còn lại được khôi phục (tự động lưu)</td><td class="num">0:10</td></tr>
+          <tr><td>4</td><td>Admin: tạo bài Listening kèm upload audio</td><td>Các competency có trọng số cộng lại bằng 1; trạng thái audio chuyển từ đang xử lý → sẵn sàng</td><td class="num">0:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Video 3: chấm điểm bằng AI (slide 17 · 2:00)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Bước</th><th>Điểm cần nhấn mạnh</th><th class="num">Thời gian</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Writing: gõ hoặc dán bài viết, nộp bài</td><td>Xác nhận ngay, trạng thái "đang chấm", rồi band kèm nhận xét từng tiêu chí</td><td class="num">0:45</td></tr>
+          <tr><td>2</td><td>Speaking Part 1 với giám khảo AI trực tiếp</td><td>Hội thoại thật; việc ghi âm vẫn chạy song song bên dưới</td><td class="num">0:50</td></tr>
+          <tr><td>3</td><td>Màn hình xem lại bài → quay về dashboard</td><td>Điểm competency đã thay đổi, khép lại vòng lặp học tập</td><td class="num">0:25</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">Cắt bớt thời gian chờ chấm trong video: chỉ hiện "đang chấm…" một chút rồi chuyển sang kết quả. Mỗi video nên là một file riêng nhúng thẳng vào slide, và mang theo bản sao dự phòng của cả 3 video.</div>
+
+    <!-- 6 -->
+    <h2 id="backup">6. Slide dự phòng (sau slide "Cảm ơn")</h2>
+    <p>Đánh số các slide này và in sẵn danh mục, để nhóm chuyển ngay tới đúng slide khi bị hỏi.</p>
+    <div class="grid-2">
+      <div class="card"><h3>Phân tích</h3><ul>
+        <li>B1 Bảng yêu cầu chức năng (FR-1 đến FR-6)</li>
+        <li>B2 Yêu cầu phi chức năng kèm kết quả kiểm thử</li>
+        <li>B3 Sơ đồ use case</li>
+        <li>B4 Sơ đồ tuần tự (xác thực, thiết lập năng lực, gợi ý bài, làm &amp; chấm bài, tạo bài tập)</li>
+        <li>B5 Sơ đồ hoạt động BPMN</li>
+      </ul></div>
+      <div class="card"><h3>Thiết kế</h3><ul>
+        <li>B6 ERD &amp; sơ đồ lớp</li>
+        <li>B7 Kế thừa bài tập (MikroORM discriminator)</li>
+        <li>B8 Công thức đầy đủ: W-HKT, performance, pacing, số bài mỗi ngày</li>
+        <li>B9 Luồng giao diện &amp; các màn hình chính</li>
+        <li>B10 Sơ đồ phụ thuộc giữa các module</li>
+      </ul></div>
+      <div class="card"><h3>Công nghệ &amp; vận hành</h3><ul>
+        <li>B11 So sánh công nghệ: React và Angular, NestJS và Spring, MongoDB và PostgreSQL, R2 và S3, GCP và AWS</li>
+        <li>B12 Bảng REST endpoint</li>
+        <li>B13 Chi tiết triển khai: Dockerfile, workflow CD, cấu hình GitHub Environments, các phương án hosting MongoDB</li>
+        <li>B14 Sơ đồ tuần tự upload qua presigned URL</li>
+      </ul></div>
+      <div class="card"><h3>AI</h3><ul>
+        <li>B15 Những điểm AI tác động tới bài làm (các mô hình được dùng)</li>
+        <li>B16 Bảng đầy đủ các lỗi có thể xảy ra → cách kiểm soát</li>
+        <li>B17 Bộ dữ liệu kiểm định, các chỉ số (MAE, QWK, WER), bộ tấn công, kiểm thử metamorphic</li>
+        <li>B18 Tính chi phí mỗi lần chấm AI</li>
+        <li>B19 Bảng thiết kế và bản đã triển khai của cơ chế thích ứng (W-HKT, số bài mỗi ngày, trọng số theo streak, FR-6.2, FSRS)</li>
+      </ul></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
