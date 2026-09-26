@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reeldemy Slide Plan</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <strong>Contents</strong>
+    <a href="#principle">1. Overall approach</a>
+    <a href="#timing">2. Time allocation</a>
+    <a href="#slides">3. Slide-by-slide plan</a>
+    <a href="#changes">4. Plan → reality</a>
+    <a href="#demo">5. Demo script</a>
+    <a href="#backup">6. Backup slides</a>
+    <a class="switch" href="qa-checklist.html">Q&amp;A &amp; checklist →</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">HK252-DAGD1-108 · Thesis Defense Council</div>
+      <h1>Reeldemy: Slide Plan</h1>
+      <p class="meta">Instructors: Dr. Truong Tuan Anh, MSc. Vu Ngoc Tu · Team: Nghiem Pham Vy Nghi, Dao Anh Phuc, Doan Viet Tien Dat</p>
+      <p class="meta">Assumes a <strong>20-minute presentation</strong> followed by Q&amp;A. If the slot is different, scale the timings accordingly. All figures here come from the report or the source code; re-check them if anything changes before the defense.</p>
+      <a class="page-switch" href="qa-checklist.html">Go to Q&amp;A &amp; checklist →</a>
+    </header>
+
+    <!-- 1 -->
+    <h2 id="principle">1. Overall approach</h2>
+    <div class="callout">
+      <strong>The phase 1 defense presented what the team planned to do. The final defense must show the council what the team has done, with evidence that it works.</strong>
+      The council has already heard the problem and the design. Cover those briefly and spend the time on the three deep dives (each with a short demo video) and on the evidence.
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>From the team's phase 1 slides</h3>
+        <p><strong>Keep</strong></p>
+        <ul>
+          <li>A clear problem narrative: high demand, cost barrier, three gaps</li>
+          <li>A compact main body, with diagrams moved to the appendix</li>
+          <li>Numbered section divider slides</li>
+        </ul>
+        <p><strong>Avoid</strong></p>
+        <ul>
+          <li>Leftover Slidesgo template pages (PDF pages 88-128) and the empty slide 35</li>
+          <li>Content copied onto the wrong slide (slides 8 and 12) and overlapping text (slide 9)</li>
+          <li>Diagram slides with a title only and no explanation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>From the previous cohort's slides (Chung Ta Cung Tien)</h3>
+        <p><strong>Learn from</strong></p>
+        <ul>
+          <li>Pre-recorded demo videos for each functional flow</li>
+          <li>Evidence slides: monitoring dashboard, test dataset with accuracy rates</li>
+          <li>Introduce each member's scope of work at the start; numbered, captioned figures</li>
+          <li>Appendix with related-system comparison, database, deployment diagram</li>
+        </ul>
+        <p><strong>Avoid</strong></p>
+        <ul>
+          <li>A thin problem statement and motivation section</li>
+          <li>Leftover template pages in the PDF as well</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <h2 id="timing">2. Time allocation</h2>
+    <div class="timebar" role="img" aria-label="Time allocation for each part of the 20 minutes">
+      <div style="flex:1;background:var(--s1)">1:00</div>
+      <div style="flex:1.5;background:var(--s2)">1:30</div>
+      <div style="flex:1.5;background:var(--s3)">1:30</div>
+      <div style="flex:1;background:var(--s4)">1:00</div>
+      <div style="flex:1.5;background:var(--s6)">1:30</div>
+      <div style="flex:2.5;background:var(--s7)">2:30</div>
+      <div style="flex:2.5;background:var(--s12)">2:30</div>
+      <div style="flex:4.5;background:var(--s8)">AI 4:30</div>
+      <div style="flex:1.5;background:var(--s9)">1:30</div>
+      <div style="flex:1;background:var(--s11)">1:00</div>
+      <div style="flex:1.5;background:var(--s10)">1:30</div>
+    </div>
+    <div class="legend">
+      <span style="--c:var(--s1)">Opening</span><span style="--c:var(--s2)">Problem</span><span style="--c:var(--s3)">Objectives</span>
+      <span style="--c:var(--s4)">Learning loop</span><span style="--c:var(--s6)">Architecture</span><span style="--c:var(--s7)">Adaptive mechanism</span>
+      <span style="--c:var(--s12)">Exercise types</span><span style="--c:var(--s8)">AI grading</span><span style="--c:var(--s9)">Testing</span>
+      <span style="--c:var(--s11)">Deployment</span><span style="--c:var(--s10)">Closing</span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Part</th><th>Slides</th><th class="num">Duration</th><th class="num">Ends at</th><th>Presenter</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Opening</td><td>1-3</td><td class="num">1:00</td><td class="num">1:00</td><td>A</td></tr>
+          <tr><td>2</td><td>Problem recap</td><td>4-5</td><td class="num">1:30</td><td class="num">2:30</td><td>A</td></tr>
+          <tr><td>3</td><td>Objectives &amp; changes</td><td>6-7</td><td class="num">1:30</td><td class="num">4:00</td><td>A</td></tr>
+          <tr><td>4</td><td>Learning loop</td><td>8</td><td class="num">1:00</td><td class="num">5:00</td><td>A</td></tr>
+          <tr><td>5</td><td>System architecture</td><td>9</td><td class="num">1:30</td><td class="num">6:30</td><td>C</td></tr>
+          <tr><td>6</td><td>Deep dive 1: adaptive mechanism (with 1:00 video)</td><td>10-11</td><td class="num">2:30</td><td class="num">9:00</td><td>C</td></tr>
+          <tr><td>7</td><td>Deep dive 2: full range of exercise types (with 1:30 video)</td><td>12-13</td><td class="num">2:30</td><td class="num">11:30</td><td>B</td></tr>
+          <tr><td>8</td><td>Deep dive 3: AI grading (with 2:00 video)</td><td>14-17</td><td class="num">4:30</td><td class="num">16:00</td><td>B / C</td></tr>
+          <tr><td>9</td><td>Quality evidence</td><td>18-19</td><td class="num">1:30</td><td class="num">17:30</td><td>B</td></tr>
+          <tr><td>10</td><td>Deployment</td><td>20</td><td class="num">1:00</td><td class="num">18:30</td><td>B</td></tr>
+          <tr><td>11</td><td>Limitations, future work, conclusion</td><td>21-23</td><td class="num">1:30</td><td class="num">20:00</td><td>A</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">The total is exactly 20:00 with no slack, so aim to finish about 30 seconds early in rehearsal. A/B/C are placeholders. Give each part to whoever actually built it, since the council usually questions the person who presented.</p>
+
+    <!-- 3 -->
+    <h2 id="slides">3. Slide-by-slide plan</h2>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s1)"></span><h3>Opening</h3><span class="time">1:00 · slides 1-3</span></div>
+      <div class="slide"><div class="n">1</div><div><h4>Title page</h4><ul><li>Reeldemy: an adaptive multimedia learning platform for IELTS</li><li>Council, instructors, date and time, team code</li></ul></div></div>
+      <div class="slide"><div class="n">2</div><div><h4>Members &amp; scope of work</h4><ul><li>Three members, each with their own area (frontend, backend, AI, infrastructure)</li></ul><div class="tip">The previous cohort's "Scope of Work" slide did this well: the council knows whom to ask about what.</div></div></div>
+      <div class="slide"><div class="n">3</div><div><h4>Outline</h4><ul><li>Problem → Objectives → Learning loop → Architecture → Adaptive mechanism → Exercise types → AI grading → Testing → Deployment → Conclusion</li></ul></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s2)"></span><h3>Problem recap</h3><span class="time">1:30 · slides 4-5</span></div>
+      <div class="slide"><div class="n">4</div><div><h4>High demand, high cost</h4><ul>
+        <li>An IELTS score of 4.0 or above exempts students from the national exam and counts as 10 points for the foreign language subject in high school graduation; more than 100 universities use IELTS in admissions; high school students now make up 30% of test takers</li>
+        <li><strong>Vietnamese test takers are weakest in Writing (6.0) and Speaking (5.7)</strong>. This is why AI grading of these two skills is the focus of Reeldemy.</li>
+        <li>Language centers charge 60-100 million VND to raise a score from 5.5 to 7.5, pushing learners toward unguided online self-study</li>
+      </ul><div class="src">Source: Chapter 1, Context</div></div></div>
+      <div class="slide"><div class="n">5</div><div><h4>Existing platforms vs. Reeldemy</h4><ul>
+        <li>One comparison table: Prep.vn, DOL English, IELTS Online Tests, Reeldemy</li>
+        <li>Criteria: next-lesson recommendation based on competency · coverage of all question types · AI grading of Writing and Speaking · cost per AI grading (IOT charges $9.99)</li>
+      </ul><div class="src">Source: Chapter 1, Existing System and Problem Statement. Replaces phase 1 slides 5-9.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s3)"></span><h3>Objectives &amp; changes</h3><span class="time">1:30 · slides 6-7</span></div>
+      <div class="slide"><div class="n">6</div><div><h4>Objectives &amp; scope</h4><ul>
+        <li>Six objectives: understand each learner's competency · turn that understanding into guidance · practice close to the real test for all four skills · self-study Writing and Speaking without a teacher · build a self-study habit · a continuously growing exercise bank</li>
+        <li>Scope: IELTS Academic only, web platform only, fully automated (no human teachers)</li>
+      </ul><div class="tip">Number the objectives. Slide 22 will map back to these numbers.</div></div></div>
+      <div class="slide"><div class="n">7</div><div><h4>From phase 1: plan → reality</h4><ul>
+        <li>A horizontal timeline with 4-5 key milestones, like the previous cohort's "Development Timeline" slide:
+          <div class="table-wrap"><table>
+            <thead><tr><th>Milestone</th><th>Content</th></tr></thead>
+            <tbody>
+              <tr><td>04/06/2026</td><td>Phase 1 defense: analysis, design, plan</td></tr>
+              <tr><td>06/2026</td><td>Core build: authentication, competency, exercises, sessions, daily recommendations</td></tr>
+              <tr><td>07/2026</td><td>All 4 skills complete, AI grading of Writing, CI/CD deployment</td></tr>
+              <tr><td>08/2026</td><td>Speaking and live AI examiner, testing and non-functional measurements</td></tr>
+              <tr><td>09/2026</td><td>Final defense</td></tr>
+            </tbody>
+          </table></div>
+        </li>
+        <li>Below the timeline: a short table of adjusted decisions and targets, with reasons (see <a href="#changes">section 4</a>)</li>
+      </ul><div class="tip">The 04/06/2026 milestone comes from the phase 1 slides; the other months are estimates based on the old Gantt chart and must be corrected to match reality. If the slide is crowded, move the changes table to its own slide or to the backup slides. Some council members may remember the June targets, so the team should state the changes itself rather than be seen as "moving the goalposts".</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s4)"></span><h3>Learning loop</h3><span class="time">1:00 · slide 8</span></div>
+      <div class="slide"><div class="n">8</div><div><h4>How Reeldemy guides the learner</h4><ul>
+        <li>A circular diagram: <em>Start (target band + current score or placement test) → Daily plan → Do exercise → Grading → Competency update → back to Daily plan</em></li>
+        <li>The study streak and progress toward the target keep the learner motivated</li>
+      </ul><div class="tip">Put a small copy of this loop in the corner of later slides to show where the current part fits. The first demo video only appears around minute 8, so place real screenshots (dashboard, exercise screen, grading result) next to each step of the loop so the council sees the product earlier.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s6)"></span><h3>System architecture</h3><span class="time">1:30 · slide 9</span></div>
+      <div class="slide"><div class="n">9</div><div><h4>System architecture (service-based)</h4><ul>
+        <li>The architecture diagram from the report: React client, NestJS backend, BullMQ/Redis, MongoDB Atlas, R2 + CDN, Google OAuth, DeepSeek, OpenAI</li>
+        <li>One sentence of rationale: clear module separation like microservices, but a shared database and low operating cost, suitable for a team of 3</li>
+      </ul><div class="src">Source: Chapter 3, Architecture Designs. Use the name "service-based" everywhere; phase 1 slide 20 says "Client-Server".</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s7)"></span><h3>Deep dive 1: adaptive mechanism</h3><span class="time">2:30 · slides 10-11</span></div>
+      <div class="slide"><div class="n">10</div><div><h4>How the daily plan is chosen</h4>
+        <div class="formula">PS = W<sub>decay</sub> · DecayFactor + W<sub>rel</sub> · RelevanceScore</div>
+        <ul>
+          <li><strong>DecayFactor:</strong> Σ weight × (1 − FSRS retrievability) over the exercise's competencies. Skills the learner is forgetting rank higher.</li>
+          <li><strong>Relevance (as implemented):</strong> 0.5 × (this skill's gap to target ÷ the largest gap among skills) + 0.5 × Σ weight × (1 − competency score)</li>
+          <li>W<sub>decay</sub> = 0.5 when streak ≤ 3, and 0.2 when streak &gt; 3</li>
+        </ul>
+        <p><strong>Worked example</strong> (illustrative numbers; replace with a real score breakdown taken from the API):</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Candidate exercise</th><th class="num">Decay</th><th class="num">RS<sub>skill</sub></th><th class="num">RS<sub>comp</sub></th><th class="num">RS</th><th class="num">PS (streak ≤ 3)</th><th class="num">PS (streak &gt; 3)</th></tr></thead>
+          <tbody>
+            <tr><td>A: Writing Task 2 (score 0.55, R = 0.90)</td><td class="num">0.10</td><td class="num">1.00</td><td class="num">0.45</td><td class="num">0.725</td><td class="num">0.413</td><td class="num"><strong>0.600</strong></td></tr>
+            <tr><td>B: Reading (score 0.70, R = 0.40)</td><td class="num">0.60</td><td class="num">0.25</td><td class="num">0.30</td><td class="num">0.275</td><td class="num"><strong>0.438</strong></td><td class="num">0.340</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tip">How to say it: "A new learner is sent back to the Reading material they are forgetting. Once a study habit forms, the plan shifts toward the skill furthest from the target, which is Writing." This example shows numerically that the system aims at the goal without neglecting any skill.</div>
+        <div class="src">Code: <code>reeldemy-be/src/modules/exercise/recommendation.service.ts</code>, constants in <code>src/common/constants/competencies.constants.ts</code>. The API response already includes the breakdown fields (<code>ps</code>, <code>decayFactor</code>, <code>rs</code>, <code>rsSkill</code>, <code>rsComp</code>).</div>
+      </div></div>
+      <div class="slide"><div class="n">11</div><div><h4>Demo video 1: from onboarding to the daily plan</h4><ul>
+        <li>About 1:00, live narration. Script in <a href="#demo">section 5</a>.</li>
+        <li>A new user picks a target band and signs in → the dashboard shows the daily plan, streak and progress</li>
+      </ul><div class="tip">Link to slide 10: "The 3 exercises in this plan are exactly the 3 with the highest PS under the formula we just saw." If possible, show the real score breakdown for those exercises.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s12)"></span><h3>Deep dive 2: full range of exercise types</h3><span class="time">2:30 · slides 12-13</span></div>
+      <div class="slide"><div class="n">12</div><div><h4>Practice close to the real exam for all four skills</h4><ul>
+        <li><strong>Reading:</strong> split-screen passage view, 14 question group types (matching, True/False/Not Given, sentence completion, diagram labeling, etc.)</li>
+        <li><strong>Listening:</strong> audio per part, the same question types as Reading, with note-taking and volume control</li>
+        <li><strong>Writing:</strong> Task 1 with a chart and Task 2, live word count, 10,000 character limit</li>
+        <li><strong>Speaking:</strong> 3 parts (introduction, long turn with a cue card, discussion), recording flow: microphone permission → preparation → speaking → playback</li>
+        <li><strong>How it works:</strong> a <code>QuestionGroup</code> component routes each question group to one of a few shared renderers, so the 28 Reading and Listening question types do not need 28 separate screens</li>
+        <li><strong>Shared across all skills:</strong> warnings at 5 minutes and 1 minute remaining, auto-submit at time out, autosave (in the browser and to the server every 10 seconds), resuming an unfinished session</li>
+      </ul><div class="tip">Present as a 4-cell grid, one screenshot per skill. The "how it works" part can be spoken only, without writing it all on the slide.</div><div class="src">Source: Chapter 1, Problem Statement (14 / 14 / 13 / 3 types); Chapter 5, Frontend Implementation</div></div></div>
+      <div class="slide"><div class="n">13</div><div><h4>Demo video 2: exercise types</h4><ul>
+        <li>About 1:30: do a Reading exercise with 2-3 question types, try a Listening exercise, reload the page to show the work being restored, an admin creates a Listening exercise with an audio upload</li>
+      </ul><div class="tip">Fast-forward repetitive actions. The goal is to show variety, not to finish a whole exercise.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s8)"></span><h3>Deep dive 3: AI grading</h3><span class="time">4:30 · slides 14-17</span></div>
+      <div class="slide"><div class="n">14</div><div><h4>The Writing grading pipeline</h4><ul>
+        <li>Submit → session moves to <code>GRADING</code> → BullMQ job → DeepSeek → JSON validated against a schema → saved → the result screen polls every 2 seconds</li>
+        <li>Prompt layers: hardened system prompt, rubric (4 criteria scored against band descriptors), the task prompt, the <strong>server-counted word count</strong> against the minimum (150/250), and the admin's grading notes</li>
+        <li>Invalid output is retried up to 3 times with backoff; if it still fails, the session is marked as failed and the error is reported</li>
+      </ul><div class="src">Source: Chapter 5, Grading and Competency Update</div></div></div>
+      <div class="slide"><div class="n">15</div><div><h4>The Speaking pipeline &amp; live AI examiner</h4><ul>
+        <li>MediaRecorder → upload to R2 via presigned URL → <code>gpt-4o-transcribe</code> → DeepSeek grades, one score per Part</li>
+        <li>Pronunciation is deliberately not graded: a transcript cannot represent pronunciation</li>
+        <li>Live examiner for Part 1 and Part 3: WebRTC, short-lived token, examiner instructions set on the server</li>
+        <li><strong>Grading is based on the recorded file</strong>. If the live connection drops, the learner loses only the conversation, not the graded submission.</li>
+      </ul><div class="tip">Show the frontend fallback message ("We'll record your answers instead").</div></div></div>
+      <div class="slide"><div class="n">16</div><div><h4>Can the AI's grading be trusted?</h4><ul>
+        <li>Five failure modes and their controls: malformed output → schema validation and retry · wrong length counting → word count computed in code · prompt injection → the essay is treated as untrusted content, with length and language checks · learners seeing grading notes → notes are stripped from the payload sent down · overtrusting the band → shown as an "estimated practice score"</li>
+        <li>A validation protocol with targets fixed in advance: MAE ≤ 1.0 band · agreement within 0.5 band ≥ 60% · QWK ≥ 0.60 · ≥ 80% of essays varying by at most 0.5 band across 5 gradings · attack success rate ≤ 10%</li>
+        <li><strong>If the team has run the experiment, put the results here.</strong></li>
+      </ul><div class="src">Source: Chapter 5, Validation of AI Grading</div></div></div>
+      <div class="slide"><div class="n">17</div><div><h4>Demo video 3: grading Writing and Speaking</h4><ul>
+        <li>About 2:00: submit a Writing essay → "grading" status → band and per-criterion feedback</li>
+        <li>Speaking Part 1 with the live AI examiner, with the recording still running in parallel</li>
+        <li>Review screen → dashboard with the competency scores changed, closing the loop from slide 8</li>
+      </ul><div class="tip">The three pipeline slides before the video get only 2:30, so keep them short and let the video illustrate. Trim the grading wait time in the video. Do not demo live Speaking in the defense room, because it depends on the microphone, noise and network.</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s9)"></span><h3>Quality evidence</h3><span class="time">1:30 · slides 18-19</span></div>
+      <div class="slide"><div class="n">18</div><div><h4>Testing at five levels</h4><ul>
+        <li>Headline figure: <strong>867 test cases · 128 files</strong></li>
+        <li>Backend: 294 unit / 46 integration / 56 end-to-end. Frontend: 448 unit and component / 23 Playwright cases × 3 browsers.</li>
+        <li>Coverage: backend 98.5% statements, frontend 94.3% statements, both enforced by CI (minimum thresholds 80% / 85%)</li>
+      </ul><div class="tip">Use screenshots (green CI run, coverage report) instead of a table.</div></div></div>
+      <div class="slide"><div class="n">19</div><div><h4>Non-functional results</h4><ul>
+        <li>p95 ≈ 280 ms on the detail page · stress test with 100 users, every request returned 200 · 3 retries with backoff · autosave every 10 seconds · all non-functional checks passed</li>
+      </ul><div class="src">Source: Chapter 5, Non-Functional Testing</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s11)"></span><h3>Deployment</h3><span class="time">1:00 · slide 20</span></div>
+      <div class="slide"><div class="n">20</div><div><h4>How the system is deployed and operated</h4><ul>
+        <li><strong>Infrastructure diagram:</strong> frontend on Cloudflare Pages · backend as a Docker container on Google Compute Engine · MongoDB Atlas · Redis on the same VM · Cloudflare R2 + CDN</li>
+        <li><strong>CI/CD pipeline</strong> (GitHub Actions): lint &amp; type-check → unit + integration tests → build &amp; push image to GitHub Container Registry → deploy over SSH. End-to-end tests (Playwright) run against each PR's preview build.</li>
+        <li><strong>4 environments:</strong> local · per-PR preview · develop (<code>develop</code> branch) · production (<code>main</code> branch). Develop and production share no database, bucket or VM; secrets are separated through GitHub Environments.</li>
+        <li><strong>Safe operation:</strong> multi-stage Docker image (<code>node:20-alpine</code>, runs as a non-root user) · environment variables validated with Joi at startup · a <code>GET /health</code> endpoint that checks both MongoDB and Redis, used for health checks and uptime monitoring</li>
+      </ul><div class="tip">Learn from the previous cohort: show screenshots of the develop and production sites with real URLs, and a green GitHub Actions run. Screenshots are more convincing than bullets. If the slide is too dense, keep only the infrastructure diagram and the pipeline, and leave the rest to backup slide B13.</div><div class="src">Source: Chapter 4, Hosting and Infrastructure; Chapter 5, Deployment</div></div></div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-head"><span class="dot" style="--c:var(--s10)"></span><h3>Closing</h3><span class="time">1:30 · slides 21-23</span></div>
+      <div class="slide"><div class="n">21</div><div><h4>Limitations &amp; future work</h4><ul>
+        <li>Limitations: AI grading validation not yet run · adaptive rules still simplified · Pronunciation not graded · Redis fixed at <code>localhost</code> and a single VM</li>
+        <li>Future work: run the validation · coaching across multiple study sessions · difficulty-adjusted exercises · a companion mobile app</li>
+      </ul></div></div>
+      <div class="slide"><div class="n">22</div><div><h4>Conclusion: objectives → results</h4><ul>
+        <li>The six numbered objectives, each with a ✓ and one piece of evidence already shown</li>
+      </ul></div></div>
+      <div class="slide"><div class="n">23</div><div><h4>Thank you · Q&amp;A</h4><ul><li>Production URL and QR code. The backup slides follow this slide.</li></ul></div></div>
+    </div>
+
+    <!-- 4 -->
+    <h2 id="changes">4. Plan (phase 1) → reality</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Item</th><th>Phase 1 slides</th><th>Final report</th><th>Why to mention it</th></tr></thead>
+        <tbody>
+          <tr><td>Backend hosting</td><td>DigitalOcean</td><td>Google Compute Engine (MongoDB Atlas kept)</td><td>Shares billing with the authentication service; Atlas is provider-independent, so switching needs no data migration</td></tr>
+          <tr><td>AI provider</td><td>DeepSeek</td><td>DeepSeek + OpenAI</td><td>DeepSeek has no speech-to-text or realtime voice; using two providers means changing one does not affect the other</td></tr>
+          <tr><td>Sign-in</td><td>Google only</td><td>Google + email/password (bcrypt)</td><td>Both issue the same JWT session</td></tr>
+          <tr><td>Coverage target</td><td>≥ 70% line</td><td>80% backend / 85% frontend; achieved 98.5% / 94.3%</td><td>Targets raised once the test suite matured</td></tr>
+          <tr><td>Load target</td><td>50 concurrent sessions, p95 ≤ 500 ms</td><td>10 users for 10 minutes, plus a stress test up to 100 users</td><td>Matches the current test infrastructure (shared develop VM)</td></tr>
+          <tr><td>Media load target</td><td>≤ 200 ms with 50 users</td><td>Dropped</td><td>Measuring it needs monitoring tools outside the project scope</td></tr>
+          <tr><td>Soft delete</td><td>Recoverable within 30 days</td><td>Kept indefinitely (no cleanup job)</td><td>Supports audit and traceability requirements</td></tr>
+          <tr><td>Speaking</td><td>Planned</td><td>Completed: speech-to-text, grading, live examiner</td><td>-</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5 -->
+    <h2 id="demo">5. Script for the 3 demo videos (4:30 total)</h2>
+    <p>Place each video at the end of its deep-dive section. Use the same learner account for all 3 videos so the story stays continuous, and record on production data so the dashboard is not empty.</p>
+    <h3>Video 1: adaptive mechanism (slide 11 · 1:00)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Step</th><th>Point to emphasize</th><th class="num">Time</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>New user: choose a target band, choose "new to IELTS", sign in with Google</td><td>Information entered before signing in is kept after signing in</td><td class="num">0:30</td></tr>
+          <tr><td>2</td><td>Dashboard: daily plan, streak, progress bar</td><td>The plan is generated by the formula on slide 10, not a fixed list</td><td class="num">0:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Video 2: exercise types (slide 13 · 1:30)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Step</th><th>Point to emphasize</th><th class="num">Time</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Do a Reading exercise: 2-3 question types</td><td>Split-screen layout like the real exam; one shared renderer serves many types</td><td class="num">0:35</td></tr>
+          <tr><td>2</td><td>Do a Listening exercise: play audio, take notes</td><td>Same question types as Reading, with tools specific to Listening</td><td class="num">0:15</td></tr>
+          <tr><td>3</td><td><strong>Reload the page</strong> mid-exercise</td><td>Answers and remaining time are restored (autosave)</td><td class="num">0:10</td></tr>
+          <tr><td>4</td><td>Admin: create a Listening exercise with an audio upload</td><td>Weighted competencies sum to 1; audio status goes from processing → ready</td><td class="num">0:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Video 3: AI grading (slide 17 · 2:00)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Step</th><th>Point to emphasize</th><th class="num">Time</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Writing: type or paste an essay, submit</td><td>Immediate confirmation, a "grading" status, then the band with per-criterion feedback</td><td class="num">0:45</td></tr>
+          <tr><td>2</td><td>Speaking Part 1 with the live AI examiner</td><td>A real conversation; recording keeps running underneath</td><td class="num">0:50</td></tr>
+          <tr><td>3</td><td>Review screen → back to the dashboard</td><td>Competency scores have changed, closing the learning loop</td><td class="num">0:25</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout warn">Trim the grading wait in the videos: show "grading..." briefly, then cut to the result. Each video should be its own file embedded directly in the slide, and you should bring backup copies of all 3 videos.</div>
+
+    <!-- 6 -->
+    <h2 id="backup">6. Backup slides (after the "Thank you" slide)</h2>
+    <p>Number these slides and print the index, so the team can jump straight to the right slide when asked.</p>
+    <div class="grid-2">
+      <div class="card"><h3>Analysis</h3><ul>
+        <li>B1 Functional requirements table (FR-1 to FR-6)</li>
+        <li>B2 Non-functional requirements with test results</li>
+        <li>B3 Use case diagram</li>
+        <li>B4 Sequence diagrams (authentication, competency setup, recommendation, taking &amp; grading an exercise, exercise creation)</li>
+        <li>B5 BPMN activity diagram</li>
+      </ul></div>
+      <div class="card"><h3>Design</h3><ul>
+        <li>B6 ERD &amp; class diagram</li>
+        <li>B7 Exercise inheritance (MikroORM discriminator)</li>
+        <li>B8 Full formulas: W-HKT, performance, pacing, exercises per day</li>
+        <li>B9 UI flow &amp; main screens</li>
+        <li>B10 Module dependency diagram</li>
+      </ul></div>
+      <div class="card"><h3>Technology &amp; operations</h3><ul>
+        <li>B11 Technology comparison: React vs. Angular, NestJS vs. Spring, MongoDB vs. PostgreSQL, R2 vs. S3, GCP vs. AWS</li>
+        <li>B12 REST endpoint table</li>
+        <li>B13 Deployment details: Dockerfile, CD workflow, GitHub Environments configuration, MongoDB hosting options</li>
+        <li>B14 Sequence diagram of upload via presigned URL</li>
+      </ul></div>
+      <div class="card"><h3>AI</h3><ul>
+        <li>B15 Where AI touches the learner's work (the models used)</li>
+        <li>B16 Full table of failure modes → controls</li>
+        <li>B17 Validation dataset, metrics (MAE, QWK, WER), attack set, metamorphic testing</li>
+        <li>B18 Cost per AI grading</li>
+        <li>B19 Design vs. implemented adaptive mechanism (W-HKT, exercises per day, streak weighting, FR-6.2, FSRS)</li>
+      </ul></div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

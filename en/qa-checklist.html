@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reeldemy Q&amp;A</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <strong>Contents</strong>
+    <a href="#questions">1. Questions to prepare</a>
+    <a href="#checklist">2. Pre-defense checklist</a>
+    <a class="switch" href="slide-plan.html">← Slide plan</a>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">HK252-DAGD1-108 · Thesis Defense Council</div>
+      <h1>Reeldemy: Q&amp;A &amp; Checklist</h1>
+      <p class="meta">Instructors: Dr. Truong Tuan Anh, MSc. Vu Ngoc Tu · Team: Nghiem Pham Vy Nghi, Dao Anh Phuc, Doan Viet Tien Dat</p>
+      <p class="meta">Assumes a <strong>20-minute presentation</strong> followed by Q&amp;A. If the slot is different, scale the timings accordingly. All figures here come from the report or the source code; re-check them if anything changes before the defense.</p>
+      <a class="page-switch" href="slide-plan.html">← Go to the Slide plan</a>
+    </header>
+
+    <!-- 1 -->
+    <h2 id="questions">1. Questions to prepare</h2>
+    <div class="controls">
+      <button type="button" data-toggle="open">Expand all</button>
+      <button type="button" data-toggle="close">Collapse all</button>
+    </div>
+
+    <h3>High risk</h3>
+
+    <details class="q"><summary><span class="tag high">High</span><span class="qt">"How accurate is the AI grading? How do you know the band it gives is right?"</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>The report sets up a validation protocol but has no results yet ("the corpus is still being assembled"). Yet this is the platform's main selling point.</dd>
+      <dt>Suggested answer</dt><dd>The band is clearly labeled as an estimated practice score, not an official result. Reading and Listening do not use AI. Writing and Speaking are constrained by a rubric based on band descriptors, the JSON output is schema-validated, the word count is computed by the server, and there is a retry mechanism. Accuracy is measured against real examiners, with targets fixed in advance (MAE ≤ 1.0, QWK ≥ 0.60). Prior work (Koraishi 2024) shows ChatGPT generally agrees highly with human examiners, though with some deviations.</dd>
+      <dt>Evidence</dt><dd>Chapter 5, Validation of AI Grading; the ai-controls and ai-targets tables</dd>
+      <dt>To prepare</dt><dd><strong>Run an experiment before the defense</strong>, for example grade about 40 published Cambridge sample Task 2 essays once: MAE, agreement within 0.5 band, bias. One real number is worth far more than a protocol alone.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">High</span><span class="qt">"Is the recommendation algorithm in Chapter 3 really what is running?"</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>Some parts of the design are not running yet: exercise difficulty and retrievability in the update formula, the growth of α, the number of exercises N, streak-based weighting, and the FR-6.2 fallback.</dd>
+      <dt>Suggested answer</dt><dd>Scoring and ranking are really running: an FSRS-based decay component plus a relevance component, with the plan stored once per day. The competency update is a simplified moving average (α = 0.7). The missing parts are waiting on data not yet collected: exercise difficulty, average daily study time, and the stored streak. Jump to backup slide B19 (design vs. implemented table).</dd>
+      <dt>Evidence</dt><dd>The "Current implementation status" notes in Chapter 3; Chapter 5, Grading and Competency Update</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">High</span><span class="qt">"The relevance formula in the report does not match the code."</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>Formula in the report: RS = Σ w<sub>c</sub> · max(0, (Target<sub>c</sub> − Current<sub>c</sub>) / 9). In the code: RS = 0.5 · (the skill's gap to target ÷ the largest gap) + 0.5 · Σ w · (1 − competency score). The target is set per skill, not per competency, and the report's status notes do not mention this difference.</dd>
+      <dt>Suggested answer</dt><dd>The implementation combines a skill-level gap to target with a competency-level weakness, because learners set their targets per skill when they start.</dd>
+      <dt>To prepare</dt><dd>Fix the relevance formula in <code>RecommendationAlgorithm.tex</code> to match the code, or add a status note explaining the difference. Use the code-based version on slide 10.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag high">High</span><span class="qt">"How much does each AI grading cost?"</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>The team pitches a "low-cost AI loop" against IOT's $9.99 per grading, but the report gives no cost per grading.</dd>
+      <dt>To prepare</dt><dd>Estimate the tokens per Writing grading (prompt + essay + returned JSON) × the DeepSeek price; the per-minute cost of <code>gpt-4o-transcribe</code> for each Speaking Part; the per-minute cost of <code>gpt-realtime</code> for the live examiner. Put the numbers on backup slide B18.</dd>
+    </dl></div></details>
+
+    <h3>Medium risk</h3>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"Where is the Cache in the architecture actually used?"</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>The architecture diagram has a Cache component, but in the backend Redis is used only by BullMQ (and pinged by the health check). There is no application-level cache.</dd>
+      <dt>Suggested answer / preparation</dt><dd>Either remove the Cache box from the diagram before the defense, or answer that Redis currently serves as the message broker for the queue and query caching is planned. On the client side, TanStack Query already caches server data.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"Is the worker really a separate service? What happens when you scale to multiple instances?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>Currently the consumers run in the same process as the API. The queue already decouples the job producer from the job processor, so they can be split into a separate service without changing the producer side. Known limitation: Redis is fixed at <code>localhost:6379</code>, so each VM has its own queue. This configuration must be moved to environment variables before running multiple instances or moving to Memorystore.</dd>
+      <dt>Evidence</dt><dd>Chapter 3, architecture (Worker section); Chapter 5, Known Limitations</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"Why MongoDB? And how is the competency update kept consistent, with no partial writes (NFR-3.5)?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>MongoDB suits polymorphic exercise documents with deeply nested question groups, stored through MikroORM's discriminator inheritance. On consistency: the backend code uses no explicit transactions. The likely answer is that the profile lives in a single document, and MongoDB writes a single document atomically.</dd>
+      <dt>To prepare</dt><dd>Confirm the single-document write path in <code>competency-calculator.service.ts</code>, and how the failure-simulation test was run.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"If Pronunciation is not graded, is the Speaking band still meaningful?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>This is a deliberate choice: converting speech to text loses pronunciation information, so the system does not grade what it cannot observe rather than guess. Fluency is assessed only from what shows in the transcript, and the returned feedback states this limitation. The overall band is the mean of the three remaining criteria. Future work: assess pronunciation directly from audio with a dedicated model.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"Can learners cheat with prompt injection?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>The essay is sent only as untrusted user content, with an instruction never to follow requests found inside it. Submissions are capped at 10,000 characters and checked for minimum length, language and repetition before the model is called. Grading notes are stripped from the task sent to learners. The validation protocol includes about 80 attack essays, with a target of at most 10% success rate per category.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"Are the load test numbers realistic?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>The load test machine and the VM are on different continents, so about 220 ms of fixed network latency was subtracted from every measurement. The target is the shared develop VM, not a production-grade machine. Both conditions are documented along with the k6 script. Results: detail page p95 ≈ 280 ms; 10 users for 10 minutes stayed within the error threshold; the 100-user stress test returned 200 for every request.</dd>
+      <dt>To prepare</dt><dd>Have the k6 result screenshots ready.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag med">Medium</span><span class="qt">"What if the VM goes down or a new deployment breaks? Is there a rollback?"</span></summary><div class="body"><dl>
+      <dt>Why it is risky</dt><dd>The backend runs on a single VM per environment, and images are tagged by branch name (<code>:production</code>, <code>:develop</code>) rather than by version, so the report does not describe how to return to the previous version.</dd>
+      <dt>Suggested answer</dt><dd>The container runs with <code>--restart unless-stopped</code> and has a health check, so it restarts on its own when the process fails. Every change must pass lint, tests and build before deploy, and is tried on the develop environment before production. The database is on MongoDB Atlas, with automatic backups, independent of the VM. Known limitation: there is no multi-instance setup or load balancing yet, and Redis is fixed at <code>localhost</code>.</dd>
+      <dt>To prepare</dt><dd>Confirm how the team would actually roll back (for example re-run the workflow on the previous commit, or add a commit-SHA tag to images).</dd>
+    </dl></div></details>
+
+    <h3>Low risk</h3>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"Why service-based rather than monolith or microservices?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>This architecture separates grading, competency and exercise logic clearly without the cost of microservices (a database per service, service discovery), which a team of 3 should not take on. The components can still be scaled separately later.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"Where does the exercise content come from? How many exercises are there? What about copyright?"</span></summary><div class="body"><dl>
+      <dt>To prepare</dt><dd>Know the number of exercises per skill on production, the source of the reading passages and audio, and how the seeder is used. For the AI validation dataset, the report cites Cambridge sample essays by book, test and page instead of reproducing them.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"Who were the participants in the usability testing (NFR-6.1)?"</span></summary><div class="body"><dl>
+      <dt>To prepare</dt><dd>Have ready the number of participants, their characteristics, how the sessions were run, and the completion times.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"How are an exercise's competency weights assigned? Who decides?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>The admin assigns weighted competencies when creating an exercise, and the weights must sum to 1 (FR-3.1). The competency catalog is seeded, not created in the UI. Know how many competencies are seeded per skill and how they relate to the 44 IELTS question types.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"How do you protect the OpenAI key when using the live examiner?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>The backend issues a short-lived client token; the real key stays on the server. The examiner instructions are sent in the token-creation request on the server, so they cannot be edited from browser devtools. Turn-taking uses the provider's voice-activity detection with a 700 ms silence threshold.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"Why use two AI providers?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>DeepSeek is cheap for high-volume text grading, but has no audio or realtime endpoint. OpenAI handles speech-to-text and live voice conversation. Keeping them separate means changing the grading provider does not affect the Speaking flow. DeepSeek is called through an OpenAI-compatible client, so switching providers is easy.</dd>
+    </dl></div></details>
+
+    <details class="q"><summary><span class="tag low">Low</span><span class="qt">"How is Reeldemy different from Prep.vn or DOL?"</span></summary><div class="body"><dl>
+      <dt>Suggested answer</dt><dd>A daily plan based on what the learner is forgetting and the gap to their target, not a fixed roadmap (Prep) or leaving learners to find exercises themselves (DOL). Every question type across all four skills, not only multiple choice. AI grading of Writing and Speaking with no per-grading fee (IOT charges $9.99).</dd>
+    </dl></div></details>
+
+    <!-- 2 -->
+    <h2 id="checklist">2. Pre-defense checklist</h2>
+    <p class="progress" id="progress"></p>
+    <div class="controls"><button type="button" id="reset">Reset checklist</button></div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Fix the report</h3>
+        <label class="check"><input type="checkbox" data-id="r1"><span>Rewrite the abstract: it still describes phase 1 ("…form the focus of the next phase")</span></label>
+        <label class="check"><input type="checkbox" data-id="r2"><span>Replace the "Specialized Project" labels: <code>main.tex</code> lines 157 and 223, <code>Introduction.tex</code> line 55</span></label>
+        <label class="check"><input type="checkbox" data-id="r3"><span>Fix the relevance formula in <code>RecommendationAlgorithm.tex</code> to match the code</span></label>
+        <label class="check"><input type="checkbox" data-id="r4"><span>State the actual number of exercises (3, passed in by the dashboard) in the status notes of Chapters 3 and 5</span></label>
+        <label class="check"><input type="checkbox" data-id="r5"><span>Remove or explain the Cache component in the architecture diagram</span></label>
+        <label class="check"><input type="checkbox" data-id="r6"><span>Fix the duplicated image in the Daily Tasks figure (<code>UserInterfaceDesigns.tex</code> line 67)</span></label>
+        <label class="check"><input type="checkbox" data-id="r7"><span>Resolve the <code>TODO(team)</code> notes in <code>Testing.tex</code> (dataset size, ceiling band, targets)</span></label>
+      </div>
+      <div class="card">
+        <h3>Edit the slides</h3>
+        <label class="check"><input type="checkbox" data-id="d1"><span>Delete leftover Slidesgo template pages and empty slides before exporting the PDF</span></label>
+        <label class="check"><input type="checkbox" data-id="d2"><span>Fix wrongly copied content (phase 1 slides 8 and 12) and overlapping text (slide 9)</span></label>
+        <label class="check"><input type="checkbox" data-id="d3"><span>Update outdated slides: NFR (13), external services (25, add OpenAI), hosting (33, GCP), architecture name (20)</span></label>
+        <label class="check"><input type="checkbox" data-id="d4"><span>Add numbered figure captions</span></label>
+        <label class="check"><input type="checkbox" data-id="d5"><span>Add an index of the backup slides (B1-B19)</span></label>
+      </div>
+      <div class="card">
+        <h3>Evidence to prepare</h3>
+        <label class="check"><input type="checkbox" data-id="e1"><span>AI grading experiment (MAE, agreement within 0.5 band, bias on published sample essays)</span></label>
+        <label class="check"><input type="checkbox" data-id="e2"><span>Cost per grading for Writing, Speaking and the live examiner</span></label>
+        <label class="check"><input type="checkbox" data-id="e3"><span>One real score breakdown for the worked example</span></label>
+        <label class="check"><input type="checkbox" data-id="e4"><span>Screenshots: green CI run, coverage report, k6 results, error tracking, deploy workflow, and the develop/production sites</span></label>
+        <label class="check"><input type="checkbox" data-id="e5"><span>Number of exercises per skill on production</span></label>
+      </div>
+      <div class="card">
+        <h3>Rehearsal</h3>
+        <label class="check"><input type="checkbox" data-id="p1"><span>Record 3 short demo videos (1:00, 1:30, 2:00) and keep backup copies</span></label>
+        <label class="check"><input type="checkbox" data-id="p2"><span>Check video, audio and projector under the defense room's conditions</span></label>
+        <label class="check"><input type="checkbox" data-id="p3"><span>Assign an owner for each group of questions in <a href="#questions">section 1</a></span></label>
+        <label class="check"><input type="checkbox" data-id="p4"><span>Do two full timed run-throughs, finishing under 20:00</span></label>
+        <label class="check"><input type="checkbox" data-id="p5"><span>Mock Q&amp;A: one member plays the council and asks the high-risk questions</span></label>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('[data-toggle]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var open = btn.dataset.toggle === 'open';
+      document.querySelectorAll('details.q').forEach(function (d) { d.open = open; });
+    });
+  });
+
+  var KEY = 'reeldemy-council-checklist-en';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { state = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.check input'));
+
+  function render() {
+    var done = 0;
+    boxes.forEach(function (b) {
+      b.checked = !!state[b.dataset.id];
+      b.closest('.check').classList.toggle('done', b.checked);
+      if (b.checked) done++;
+    });
+    document.getElementById('progress').textContent = 'Done ' + done + '/' + boxes.length;
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () { state[b.dataset.id] = b.checked; save(); render(); });
+  });
+  document.getElementById('reset').addEventListener('click', function () { state = {}; save(); render(); });
+  render();
+</script>
+</body>
+</html>
