@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="720" viewBox="0 0 1000 720" font-family="Helvetica,Arial,sans-serif">
+<rect width="1000" height="720" fill="#fff"/>
+<text x="500" y="44" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Kestrel Point Nature Reserve</text>
+<!-- compass -->
+<g transform="translate(940,40)"><line x1="0" y1="22" x2="0" y2="-8" stroke="#333" stroke-width="2"/><path d="M-7,0 L0,-14 L7,0 Z" fill="#333"/><text x="0" y="-18" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">N</text></g>
+<rect x="30" y="70" width="940" height="620" fill="#f7f9f3" stroke="#333" stroke-width="2"/>
+<!-- sea + dunes -->
+<rect x="880" y="71" width="89" height="618" fill="#cfe3f2"/>
+<text x="925" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#3d6a91" transform="rotate(90 925 380)">SEA</text>
+<rect x="822" y="71" width="58" height="618" fill="#f2e6c9"/>
+<text x="851" y="620" text-anchor="middle" font-size="12" fill="#6b5a2e" transform="rotate(90 851 620)">DUNES</text>
+<!-- woodland -->
+<path d="M31,150 L200,140 L232,220 L222,360 L236,520 L31,530 Z" fill="#b3cbaa" stroke="#555" stroke-width="1.2"/>
+<text x="120" y="330" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">WOODLAND</text>
+<!-- lake -->
+<ellipse cx="470" cy="220" rx="190" ry="100" fill="#cfe3f2" stroke="#3d6a91" stroke-width="1.5"/>
+<text x="470" y="226" text-anchor="middle" font-size="15" font-weight="bold" fill="#3d6a91">LAKE</text>
+<!-- stream -->
+<path d="M655,235 C720,280 760,330 790,390 S850,470 881,500" fill="none" stroke="#6f9fc6" stroke-width="8"/>
+<text x="700" y="300" font-size="12" fill="#3d6a91" font-style="italic">stream</text>
+<!-- paths -->
+<g stroke="#a67c52" stroke-width="7" stroke-linecap="round" fill="none">
+  <line x1="390" y1="590" x2="390" y2="318"/>
+  <line x1="390" y1="480" x2="240" y2="480"/>
+  <line x1="390" y1="390" x2="850" y2="390"/>
+</g>
+<text x="398" y="545" font-size="11" fill="#6b4f33" font-weight="bold">MAIN PATH</text>
+<!-- bridge -->
+<rect x="775" y="378" width="28" height="24" fill="#8b6a48" stroke="#333" stroke-width="1"/>
+<!-- jetty + benches -->
+<rect x="430" y="312" width="14" height="30" fill="#8b6a48" stroke="#333" stroke-width="1"/>
+<!-- car park + entrance -->
+<rect x="60" y="585" width="200" height="85" fill="#d2d2d2" stroke="#555" stroke-width="1.2"/>
+<text x="160" y="633" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">CAR PARK</text>
+<line x1="160" y1="670" x2="160" y2="689" stroke="#999" stroke-width="16"/>
+<text x="160" y="708" text-anchor="middle" font-size="12" fill="#333">Entrance</text>
+<rect x="222" y="552" width="30" height="26" fill="#c9876a" stroke="#555" stroke-width="1"/>
+<!-- visitor centre -->
+<rect x="300" y="590" width="80" height="70" fill="#ead9c0" stroke="#555" stroke-width="1.2"/>
+<text x="340" y="620" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">VISITOR</text>
+<text x="340" y="634" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">CENTRE</text>
+<text x="340" y="678" text-anchor="middle" font-size="11" fill="#b00020" font-weight="bold">★ You are here</text>
+<!-- shed -->
+<rect x="410" y="596" width="34" height="28" fill="#8fbf8f" stroke="#555" stroke-width="1"/>
+<!-- letters -->
+<g font-size="15" font-weight="bold" text-anchor="middle" fill="#111">
+  <circle cx="262" cy="540" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="262" y="545">A</text>
+  <circle cx="470" cy="610" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="470" y="615">B</text>
+  <circle cx="250" cy="455" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="250" y="460">C</text>
+  <circle cx="330" cy="342" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="330" y="347">D</text>
+  <circle cx="470" cy="100" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="470" y="105">E</text>
+  <circle cx="789" cy="360" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="789" y="365">F</text>
+  <circle cx="851" cy="360" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="851" y="365">G</text>
+  <circle cx="418" cy="366" r="14" fill="#fff" stroke="#111" stroke-width="2"/><text x="418" y="371">H</text>
+</g>
+</svg>

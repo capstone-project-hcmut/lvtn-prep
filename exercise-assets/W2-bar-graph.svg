@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540">
+<defs><pattern id="h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#a8391b"/><line x1="0" y1="0" x2="0" y2="7" stroke="#ffffff" stroke-width="2.4"/></pattern></defs>
+<rect width="900" height="540" fill="#ffffff"/>
+<text x="450.0" y="32" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="bold" fill="#111">Workers employed by sector, 1990 and 2020</text>
+<line x1="82" y1="448.0" x2="870" y2="448.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="452.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">0</text>
+<line x1="82" y1="409.0" x2="870" y2="409.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="413.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">1</text>
+<line x1="82" y1="370.0" x2="870" y2="370.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="374.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">2</text>
+<line x1="82" y1="331.0" x2="870" y2="331.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="335.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">3</text>
+<line x1="82" y1="292.0" x2="870" y2="292.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="296.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">4</text>
+<line x1="82" y1="253.0" x2="870" y2="253.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="257.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">5</text>
+<line x1="82" y1="214.0" x2="870" y2="214.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="218.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">6</text>
+<line x1="82" y1="175.0" x2="870" y2="175.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="179.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">7</text>
+<line x1="82" y1="136.0" x2="870" y2="136.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="140.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">8</text>
+<line x1="82" y1="97.0" x2="870" y2="97.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="101.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">9</text>
+<line x1="82" y1="58.0" x2="870" y2="58.0" stroke="#dcdcdc" stroke-width="1"/>
+<text x="70" y="62.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">10</text>
+<rect x="104.3" y="323.2" width="52" height="124.8" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="165.3" y="412.9" width="52" height="35.1" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="160.8" y="472" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Agriculture</text>
+<rect x="261.9" y="155.5" width="52" height="292.5" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="322.9" y="327.1" width="52" height="120.9" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="318.4" y="472" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Manufacturing</text>
+<rect x="419.5" y="354.4" width="52" height="93.6" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="480.5" y="346.6" width="52" height="101.4" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="476.0" y="472" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Construction</text>
+<rect x="577.1" y="221.8" width="52" height="226.2" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="638.1" y="167.2" width="52" height="280.8" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="633.6" y="472" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Retail and</text>
+<text x="633.6" y="488" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">hospitality</text>
+<rect x="734.7" y="307.6" width="52" height="140.4" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="795.7" y="81.4" width="52" height="366.6" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="791.2" y="472" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Professional</text>
+<text x="791.2" y="488" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">services</text>
+<line x1="82" y1="448" x2="870" y2="448" stroke="#333" stroke-width="1.5"/>
+<line x1="82" y1="58" x2="82" y2="448" stroke="#333" stroke-width="1.5"/>
+<text x="22" y="253.0" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#111" transform="rotate(-90 22 253.0)">Workers (millions)</text>
+<text x="476.0" y="526" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#111">Sector</text>
+<rect x="98" y="70" width="132" height="62" fill="#fff" fill-opacity="0.94" stroke="#bbb"/>
+<rect x="110" y="86" width="26" height="14" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<text x="146" y="98" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">1990</text>
+<rect x="110" y="110" width="26" height="14" fill="url(#h)" stroke="#333" stroke-width="0.8"/>
+<text x="146" y="122" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#222">2020</text>
+</svg>

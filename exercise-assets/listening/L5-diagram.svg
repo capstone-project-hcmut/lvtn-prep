@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" font-family="Helvetica,Arial,sans-serif">
+<rect width="1100" height="640" fill="#fff"/>
+<text x="550" y="40" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Cross-section of a qanat</text>
+<!-- ground -->
+<path d="M40,110 L200,130 L320,220 L1060,270 L1060,600 L40,600 Z" fill="#ead9c0" stroke="#6b5a2e" stroke-width="2"/>
+<text x="60" y="150" font-size="13" fill="#6b5a2e" font-weight="bold">HILLS</text>
+<text x="600" y="228" font-size="13" fill="#6b5a2e" font-weight="bold">PLAIN</text>
+<!-- gravel (water-bearing) layer -->
+<defs><pattern id="gravel" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#cfe3f2"/><circle cx="4" cy="4" r="2.2" fill="#8ba9c2"/><circle cx="11" cy="10" r="2" fill="#8ba9c2"/></pattern></defs>
+<path d="M41,380 L400,405 L400,460 L41,450 Z" fill="url(#gravel)" stroke="#3d6a91" stroke-width="1.2"/>
+<line x1="41" y1="380" x2="400" y2="405" stroke="#3d6a91" stroke-width="2" stroke-dasharray="8,5"/>
+<text x="410" y="410" font-size="12" fill="#3d6a91" font-style="italic">water table</text>
+<!-- tunnel -->
+<line x1="180" y1="415" x2="960" y2="263" stroke="#3d6a91" stroke-width="10" stroke-linecap="round"/>
+<text x="760" y="330" font-size="13" fill="#111">tunnel (very gentle slope)</text>
+<!-- mother well -->
+<rect x="172" y="128" width="16" height="287" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<!-- shafts: x, surface y, tunnel y -->
+<g fill="#fff" stroke="#333" stroke-width="1.2">
+  <rect x="295" y="205" width="10" height="187"/>
+  <rect x="415" y="227" width="10" height="141"/>
+  <rect x="535" y="235" width="10" height="110"/>
+  <rect x="655" y="243" width="10" height="78"/>
+  <rect x="775" y="251" width="10" height="47"/>
+</g>
+<g fill="#c9a77c" stroke="#6b5a2e" stroke-width="1">
+  <path d="M170,128 Q180,112 190,128"/>
+  <path d="M283,205 Q300,188 317,205"/><path d="M403,227 Q420,210 437,227"/><path d="M523,235 Q540,218 557,235"/><path d="M643,243 Q660,226 677,243"/><path d="M763,251 Q780,234 797,251"/>
+</g>
+<!-- outlet, channel, fields, village -->
+<path d="M960,263 L1059,270" stroke="#6f9fc6" stroke-width="7"/>
+<text x="955" y="292" font-size="12" fill="#111">outlet</text>
+<text x="985" y="250" font-size="12" fill="#111">open channel</text>
+<g fill="#7fa86a"><rect x="930" y="238" width="10" height="16"/><rect x="946" y="232" width="10" height="20"/><rect x="1015" y="258" width="10" height="10"/></g>
+<text x="920" y="205" font-size="12" fill="#111">fields &amp; village</text>
+<g fill="#d8c3a0" stroke="#555"><rect x="1030" y="222" width="18" height="16"/><path d="M1028,222 L1039,212 L1050,222 Z"/></g>
+<!-- inset: tunnel lining -->
+<line x1="600" y1="336" x2="640" y2="470" stroke="#555" stroke-width="1" stroke-dasharray="4,3"/>
+<circle cx="660" cy="520" r="60" fill="#ead9c0" stroke="#555" stroke-width="1.5"/>
+<ellipse cx="660" cy="520" rx="26" ry="38" fill="#fff" stroke="#9c5a32" stroke-width="9"/>
+<!-- numbered labels -->
+<g font-size="15" fill="#111">
+  <line x1="188" y1="170" x2="236" y2="96" stroke="#111" stroke-width="1"/>
+  <text x="240" y="92"><tspan font-weight="bold">1</tspan>  ____________ well</text>
+  <line x1="200" y1="430" x2="160" y2="505" stroke="#111" stroke-width="1"/>
+  <text x="60" y="525"><tspan font-weight="bold">2</tspan>  layer of ____________</text>
+  <line x1="540" y1="285" x2="560" y2="170" stroke="#111" stroke-width="1"/>
+  <text x="470" y="160"><tspan font-weight="bold">3</tspan>  vertical shafts: for ____________ and removing soil</text>
+  <line x1="690" y1="495" x2="745" y2="495" stroke="#111" stroke-width="1"/>
+  <text x="750" y="500"><tspan font-weight="bold">4</tspan>  baked clay ____________</text>
+  <text x="750" y="520" font-size="12" fill="#555">(lining the tunnel in soft ground)</text>
+</g>
+</svg>

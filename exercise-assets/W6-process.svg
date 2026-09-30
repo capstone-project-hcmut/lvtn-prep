@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="540" viewBox="0 0 1160 540">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1f4e79"/></marker></defs>
+<rect width="1160" height="540" fill="#fff"/>
+<text x="580.0" y="46" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111">How chocolate is made</text>
+<rect x="36.0" y="126" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="58.0" cy="147" r="14" fill="#1f4e79"/>
+<text x="58.0" y="152" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">1</text>
+<text x="160.0" y="178" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Cacao pods harvested</text>
+<text x="160.0" y="199" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">from trees</text>
+<rect x="316.0" y="126" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="338.0" cy="147" r="14" fill="#1f4e79"/>
+<text x="338.0" y="152" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">2</text>
+<text x="440.0" y="178" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Pods opened; beans</text>
+<text x="440.0" y="199" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">and pulp removed</text>
+<rect x="596.0" y="126" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="618.0" cy="147" r="14" fill="#1f4e79"/>
+<text x="618.0" y="152" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">3</text>
+<text x="720.0" y="178" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Beans fermented in wooden</text>
+<text x="720.0" y="199" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">boxes (5-7 days)</text>
+<rect x="876.0" y="126" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="898.0" cy="147" r="14" fill="#1f4e79"/>
+<text x="898.0" y="152" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">4</text>
+<text x="1000.0" y="178" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Beans dried</text>
+<text x="1000.0" y="199" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">in the sun</text>
+<rect x="876.0" y="352" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="898.0" cy="373" r="14" fill="#1f4e79"/>
+<text x="898.0" y="378" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">5</text>
+<text x="1000.0" y="404" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Beans roasted</text>
+<text x="1000.0" y="425" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">at the factory</text>
+<rect x="596.0" y="352" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="618.0" cy="373" r="14" fill="#1f4e79"/>
+<text x="618.0" y="378" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">6</text>
+<text x="720.0" y="404" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Shells removed,</text>
+<text x="720.0" y="425" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">leaving nibs</text>
+<rect x="316.0" y="352" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="338.0" cy="373" r="14" fill="#1f4e79"/>
+<text x="338.0" y="378" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">7</text>
+<text x="440.0" y="404" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Nibs ground; sugar</text>
+<text x="440.0" y="425" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">and milk added</text>
+<rect x="36.0" y="352" width="248" height="96" rx="9" fill="#f2f6fa" stroke="#1f4e79" stroke-width="2"/>
+<circle cx="58.0" cy="373" r="14" fill="#1f4e79"/>
+<text x="58.0" y="378" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#fff">8</text>
+<text x="160.0" y="404" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">Tempered, moulded</text>
+<text x="160.0" y="425" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13.5" fill="#111">and cooled into bars</text>
+<line x1="289.0" y1="174.0" x2="307.0" y2="174.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="569.0" y1="174.0" x2="587.0" y2="174.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="849.0" y1="174.0" x2="867.0" y2="174.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="1000.0" y1="227.0" x2="1000.0" y2="343.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="871.0" y1="400.0" x2="853.0" y2="400.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="591.0" y1="400.0" x2="573.0" y2="400.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<line x1="311.0" y1="400.0" x2="293.0" y2="400.0" stroke="#1f4e79" stroke-width="2.6" marker-end="url(#a)"/>
+<text x="580.0" y="518" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#555">Stages 1-4 take place on the farm; stages 5-8 at the factory.</text>
+</svg>

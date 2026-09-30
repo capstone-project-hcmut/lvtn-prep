@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="560" viewBox="0 0 1140 560">
+<defs>
+<pattern id="p1" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#a8391b"/><line x1="0" y1="0" x2="0" y2="7" stroke="#fff" stroke-width="2.4"/></pattern>
+<pattern id="p2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="7" height="7" fill="#2f6b34"/><line x1="0" y1="0" x2="0" y2="7" stroke="#fff" stroke-width="2.4"/></pattern>
+</defs>
+<rect width="1140" height="560" fill="#fff"/>
+<text x="570.0" y="34" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="bold" fill="#111">Freshwater withdrawal, 1980-2020</text>
+<text x="287.0" y="76" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#222">A. Total withdrawal (billion cubic metres)</text>
+<text x="785.0" y="76" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="bold" fill="#222">B. Share by sector (%)</text>
+<line x1="72" y1="472.0" x2="502" y2="472.0" stroke="#dcdcdc"/>
+<text x="61" y="476.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">0</text>
+<line x1="72" y1="398.4" x2="502" y2="398.4" stroke="#dcdcdc"/>
+<text x="61" y="402.4" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">10</text>
+<line x1="72" y1="324.8" x2="502" y2="324.8" stroke="#dcdcdc"/>
+<text x="61" y="328.8" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">20</text>
+<line x1="72" y1="251.2" x2="502" y2="251.2" stroke="#dcdcdc"/>
+<text x="61" y="255.2" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">30</text>
+<line x1="72" y1="177.6" x2="502" y2="177.6" stroke="#dcdcdc"/>
+<text x="61" y="181.6" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">40</text>
+<line x1="72" y1="104.0" x2="502" y2="104.0" stroke="#dcdcdc"/>
+<text x="61" y="108.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">50</text>
+<line x1="72.0" y1="472" x2="72.0" y2="478" stroke="#555"/>
+<text x="72.0" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">1980</text>
+<line x1="179.5" y1="472" x2="179.5" y2="478" stroke="#555"/>
+<text x="179.5" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">1990</text>
+<line x1="287.0" y1="472" x2="287.0" y2="478" stroke="#555"/>
+<text x="287.0" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">2000</text>
+<line x1="394.5" y1="472" x2="394.5" y2="478" stroke="#555"/>
+<text x="394.5" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">2010</text>
+<line x1="502.0" y1="472" x2="502.0" y2="478" stroke="#555"/>
+<text x="502.0" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">2020</text>
+<polyline points="72.0,177.6 179.5,133.4 287.0,148.2 394.5,192.3 502.0,236.5" fill="none" stroke="#1f4e79" stroke-width="2.8"/>
+<circle cx="72.0" cy="177.6" r="4.4" fill="#1f4e79"/>
+<circle cx="179.5" cy="133.4" r="4.4" fill="#1f4e79"/>
+<circle cx="287.0" cy="148.2" r="4.4" fill="#1f4e79"/>
+<circle cx="394.5" cy="192.3" r="4.4" fill="#1f4e79"/>
+<circle cx="502.0" cy="236.5" r="4.4" fill="#1f4e79"/>
+<line x1="72" y1="472" x2="502" y2="472" stroke="#333" stroke-width="1.5"/>
+<line x1="72" y1="104" x2="72" y2="472" stroke="#333" stroke-width="1.5"/>
+<line x1="660" y1="472" x2="910" y2="472" stroke="#333" stroke-width="1.5"/>
+<line x1="660" y1="104" x2="660" y2="472" stroke="#333" stroke-width="1.5"/>
+<line x1="660" y1="472.0" x2="910" y2="472.0" stroke="#dcdcdc"/>
+<text x="649" y="476.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">0</text>
+<line x1="660" y1="398.4" x2="910" y2="398.4" stroke="#dcdcdc"/>
+<text x="649" y="402.4" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">20</text>
+<line x1="660" y1="324.8" x2="910" y2="324.8" stroke="#dcdcdc"/>
+<text x="649" y="328.8" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">40</text>
+<line x1="660" y1="251.2" x2="910" y2="251.2" stroke="#dcdcdc"/>
+<text x="649" y="255.2" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">60</text>
+<line x1="660" y1="177.6" x2="910" y2="177.6" stroke="#dcdcdc"/>
+<text x="649" y="181.6" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">80</text>
+<line x1="660" y1="104.0" x2="910" y2="104.0" stroke="#dcdcdc"/>
+<text x="649" y="108.0" text-anchor="end" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#333">100</text>
+<rect x="678.5" y="214.4" width="88" height="257.6" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="678.5" y="137.1" width="88" height="77.3" fill="url(#p1)" stroke="#333" stroke-width="0.8"/>
+<rect x="678.5" y="104.0" width="88" height="33.1" fill="url(#p2)" stroke="#333" stroke-width="0.8"/>
+<text x="722.5" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#333">1980</text>
+<rect x="803.5" y="280.6" width="88" height="191.4" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<rect x="803.5" y="188.6" width="88" height="92.0" fill="url(#p1)" stroke="#333" stroke-width="0.8"/>
+<rect x="803.5" y="104.0" width="88" height="84.6" fill="url(#p2)" stroke="#333" stroke-width="0.8"/>
+<text x="847.5" y="496" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#333">2020</text>
+<text x="20" y="288.0" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#111" transform="rotate(-90 20 288.0)">Billion cubic metres</text>
+<text x="612" y="288.0" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="13" fill="#111" transform="rotate(-90 612 288.0)">Percentage of total</text>
+<rect x="944" y="144" width="150" height="86" fill="#fff" stroke="#bbb"/>
+<rect x="956" y="154" width="24" height="14" fill="#1f4e79" stroke="#333" stroke-width="0.8"/>
+<text x="989" y="166" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Agriculture</text>
+<rect x="956" y="178" width="24" height="14" fill="url(#p1)" stroke="#333" stroke-width="0.8"/>
+<text x="989" y="190" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Industry</text>
+<rect x="956" y="202" width="24" height="14" fill="url(#p2)" stroke="#333" stroke-width="0.8"/>
+<text x="989" y="214" font-family="Helvetica,Arial,sans-serif" font-size="12.5" fill="#222">Domestic</text>
+</svg>
